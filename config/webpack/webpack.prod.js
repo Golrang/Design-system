@@ -65,9 +65,6 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.variable': JSON.stringify('prod'),
-    }),
     new CleanWebpackPlugin(),
   ],
 }

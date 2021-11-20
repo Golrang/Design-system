@@ -2,7 +2,6 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath')
 
 module.exports = {
   entry: path.resolve(__dirname, '..', '../src/app/index.tsx'),
@@ -67,6 +66,5 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
-
   stats: 'errors-only',
 }
