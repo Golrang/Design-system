@@ -1,0 +1,1786 @@
+{
+  
+  "info": {
+    "_postman_id": "500a8278-4251-4e6d-b4a0-af17ca317602",
+    "name": "DTRG CRM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"dev@here.com\",\n  \"password\": \"dev_admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/users/login/",
+              "host": ["{{endpoint}}"],
+              "path": ["users", "login", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@dtrg.dev\",\n  \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/users/login/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["users", "login", ""]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyNzA1OTkwOSwianRpIjoiOTgwOTgzNzVmMjlmNDRmZmIyZTA4YTg2MDg2MmZiYzYiLCJ1c2VyX2lkIjoyfQ.IO8dJfqcxfFAOLv07AQXfaiELTofIHmvVy5Ueg2bku0\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI2MTk1OTA5LCJqdGkiOiI0MDA1YTM4MWIwYmI0YTcwYmRiNjFkMjEwZWQ4YzhiMiIsInVzZXJfaWQiOjJ9.RoTqO0krm0Ots72tOLPkr-3MbXyv8kTtkoL2Tbu358s\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyNzA1OTkwOSwianRpIjoiOTgwOTgzNzVmMjlmNDRmZmIyZTA4YTg2MDg2MmZiYzYiLCJ1c2VyX2lkIjoyfQ.IO8dJfqcxfFAOLv07AQXfaiELTofIHmvVy5Ueg2bku0\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/users/token/refresh/",
+              "host": ["{{endpoint}}"],
+              "path": ["users", "token", "refresh", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Refresh Token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyNzA1OTkwOSwianRpIjoiOTgwOTgzNzVmMjlmNDRmZmIyZTA4YTg2MDg2MmZiYzYiLCJ1c2VyX2lkIjoyfQ.IO8dJfqcxfFAOLv07AQXfaiELTofIHmvVy5Ueg2bku0\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/users/token/refresh/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["users", "token", "refresh", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "218"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:06:35 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI2MTk1OTk2LCJqdGkiOiIxZjcyZjM0MDBiN2I0Mjg1YmYwNTY0YjlmZmJlNzZkYyIsInVzZXJfaWQiOjJ9.17dItHXUQ1crkgDYcy3mJyjj_Y6E4jCBNzrbnymGmZk\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Patients",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/patients/",
+              "host": ["{{endpoint}}"],
+              "path": ["patients", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "List",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/patients/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["patients", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "14835"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:09:42 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 98,\n    \"next\": \"http://wa-syd-dev-kl-dtrgcrmbe.azurewebsites.net/patients/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 118,\n            \"surename\": \"aaaaaa\",\n            \"first_name\": \"aaaaa\",\n            \"current_study\": \"Biocapillary Pilot\",\n            \"previous_study\": [\n                \"All in One\"\n            ],\n            \"date_of_birth\": \"2021-06-24\",\n            \"gender\": \"Male\",\n            \"phone_number\": \"12345678\",\n            \"phone_type\": [\n                \"IOS\"\n            ],\n            \"preferred_contact_time\": \"2021-6-17\",\n            \"preferred_contact_method\": \"Phone\",\n            \"email\": \"a@gmail.com\",\n            \"suburb\": \"sss\",\n            \"state\": \"sdsd\",\n            \"diabetes_type\": null,\n            \"date_of_diagnosis_of_t1d\": null,\n            \"cho_counting\": null,\n            \"exercise_type\": null,\n            \"exercise_detail\": null,\n            \"current_diabetes_management\": null,\n            \"infusion_line_type\": null,\n            \"current_insulin_use\": null,\n            \"current_cgm_wear\": null,\n            \"past_cgm_wear\": null,\n            \"frequency_of_daily_fingerstick\": null,\n            \"endocrinologist\": null,\n            \"diabetes_educator\": null,\n            \"latest_hba1c_reading\": null,\n            \"latest_hba1c_reading_date\": null,\n            \"dka_requiring_hospital_admission_past_12_months\": false,\n            \"hypoglycemic_event_past_12_months\": false,\n            \"hypo_unawareness\": false,\n            \"abnormal_kidney_function\": false,\n            \"retinopathy\": false,\n            \"foot_neuropathy\": false,\n            \"other_medical_issue\": null,\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": false,\n            \"computer_type\": null,\n            \"discussion_held_and_what_discussed\": null,\n            \"contact_date\": null,\n            \"pwod_referral\": null,\n            \"study_for_consideration\": null,\n            \"availability\": null,\n            \"availability_detail\": null,\n            \"next_step\": null,\n            \"do_not_call_until\": null,\n            \"cho_counting_details\": null,\n            \"pump_details\": null,\n            \"dka_details\": null,\n            \"deceased\": \"No\",\n            \"status\": \"Approached - recruited\",\n            \"status_details\": \"\"\n        },\n        {\n            \"id\": 106,\n            \"surename\": \"Keivani\",\n            \"first_name\": \"Ali\",\n            \"current_study\": \"All in One\",\n            \"previous_study\": [\n                \"Glysens PAVE\"\n            ],\n            \"date_of_birth\": \"2021-06-09\",\n            \"gender\": \"Male\",\n            \"phone_number\": \"12343234\",\n            \"phone_type\": [\n                \"IOS\"\n            ],\n            \"preferred_contact_time\": \"2021-06-23\",\n            \"preferred_contact_method\": \"Phone\",\n            \"email\": \"a@gmail.com\",\n            \"suburb\": \"rrrrr\",\n            \"state\": \"hhhhhhhhh\",\n            \"diabetes_type\": \"Type 2\",\n            \"date_of_diagnosis_of_t1d\": \"2021-12-31\",\n            \"cho_counting\": [\n                \"No\",\n                \"Other\"\n            ],\n            \"exercise_type\": \"Structured\",\n            \"exercise_detail\": \"sdfsdf\",\n            \"current_diabetes_management\": \"Other\",\n            \"infusion_line_type\": \"90 Degree\",\n            \"current_insulin_use\": [\n                \"Humalog\",\n                \"optisulin\"\n            ],\n            \"current_cgm_wear\": \"Guardian Connect\",\n            \"past_cgm_wear\": \"Guardian Sensor 3\",\n            \"frequency_of_daily_fingerstick\": \"2-4\",\n            \"endocrinologist\": \"dsfsdf\",\n            \"diabetes_educator\": \"asdfasf\",\n            \"latest_hba1c_reading\": \"12\",\n            \"latest_hba1c_reading_date\": \"2021-06-14\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": false,\n            \"hypo_unawareness\": false,\n            \"abnormal_kidney_function\": false,\n            \"retinopathy\": false,\n            \"foot_neuropathy\": false,\n            \"other_medical_issue\": \"asaa\",\n            \"will_come_to_st_vincent\": false,\n            \"has_internet_access\": true,\n            \"computer_type\": \"Mac\",\n            \"discussion_held_and_what_discussed\": \"ssdfsdf\",\n            \"contact_date\": \"2021-06-21\",\n            \"pwod_referral\": \"sadasd\",\n            \"study_for_consideration\": \"asds\",\n            \"availability\": \"Weekly\",\n            \"availability_detail\": \"adasd\",\n            \"next_step\": \"sdf\",\n            \"do_not_call_until\": \"sfd\",\n            \"cho_counting_details\": \"eeeeee\",\n            \"pump_details\": \"adasdasd\",\n            \"dka_details\": \"sfsdf\",\n            \"deceased\": \"Yes\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 1,\n            \"surename\": \"Khademi\",\n            \"first_name\": \"Amir hossein\",\n            \"current_study\": \"All in One\",\n            \"previous_study\": [\n                \"All in One\",\n                \"Glysens PAVE\"\n            ],\n            \"date_of_birth\": \"2021-05-05\",\n            \"gender\": \"Female\",\n            \"phone_number\": \"sdfsds\",\n            \"phone_type\": [\n                \"IOS\"\n            ],\n            \"preferred_contact_time\": \"2021-05-18\",\n            \"preferred_contact_method\": \"Phone\",\n            \"email\": \"a@gmail.com\",\n            \"suburb\": \"sdfsdfsd\",\n            \"state\": \"vic\",\n            \"diabetes_type\": \"Type 2\",\n            \"date_of_diagnosis_of_t1d\": \"2021-05-05\",\n            \"cho_counting\": [\n                \"Food App\",\n                \"Other\"\n            ],\n            \"exercise_type\": \"Structured\",\n            \"exercise_detail\": \"ex det\",\n            \"current_diabetes_management\": \"Other\",\n            \"infusion_line_type\": \"45 Degree\",\n            \"current_insulin_use\": [\n                \"Toujeo\"\n            ],\n            \"current_cgm_wear\": \"Guardian Connect\",\n            \"past_cgm_wear\": \"Guardian Connect\",\n            \"frequency_of_daily_fingerstick\": \"0-2\",\n            \"endocrinologist\": \"sdfsdf\",\n            \"diabetes_educator\": \"sdfsdf\",\n            \"latest_hba1c_reading\": \"12\",\n            \"latest_hba1c_reading_date\": \"2021-05-18\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": false,\n            \"hypo_unawareness\": false,\n            \"abnormal_kidney_function\": false,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"medical detail\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"Mac\",\n            \"discussion_held_and_what_discussed\": \"asdsad\",\n            \"contact_date\": \"2021-06-23\",\n            \"pwod_referral\": \"asdas\",\n            \"study_for_consideration\": \"asd\",\n            \"availability\": \"Weekly\",\n            \"availability_detail\": \"asd\",\n            \"next_step\": \"asd\",\n            \"do_not_call_until\": \"asd\",\n            \"cho_counting_details\": \"test cho det\",\n            \"pump_details\": \"pump det\",\n            \"dka_details\": \"skdjfkjsdf\",\n            \"deceased\": \"No\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 117,\n            \"surename\": \"KHADEMI TEST\",\n            \"first_name\": \"AMIR HOSSEIN TEST\",\n            \"current_study\": \"All in One\",\n            \"previous_study\": [\n                \"All in One\"\n            ],\n            \"date_of_birth\": \"2021-06-25\",\n            \"gender\": \"Male\",\n            \"phone_number\": \"12345789\",\n            \"phone_type\": [\n                \"IOS\"\n            ],\n            \"preferred_contact_time\": \"2021-6-4\",\n            \"preferred_contact_method\": \"Phone\",\n            \"email\": \"a@gmail.com\",\n            \"suburb\": \"assurter\",\n            \"state\": \"sdfsdf\",\n            \"diabetes_type\": null,\n            \"date_of_diagnosis_of_t1d\": null,\n            \"cho_counting\": null,\n            \"exercise_type\": null,\n            \"exercise_detail\": null,\n            \"current_diabetes_management\": null,\n            \"infusion_line_type\": null,\n            \"current_insulin_use\": null,\n            \"current_cgm_wear\": null,\n            \"past_cgm_wear\": null,\n            \"frequency_of_daily_fingerstick\": null,\n            \"endocrinologist\": null,\n            \"diabetes_educator\": null,\n            \"latest_hba1c_reading\": null,\n            \"latest_hba1c_reading_date\": null,\n            \"dka_requiring_hospital_admission_past_12_months\": false,\n            \"hypoglycemic_event_past_12_months\": false,\n            \"hypo_unawareness\": false,\n            \"abnormal_kidney_function\": false,\n            \"retinopathy\": false,\n            \"foot_neuropathy\": false,\n            \"other_medical_issue\": null,\n            \"will_come_to_st_vincent\": false,\n            \"has_internet_access\": false,\n            \"computer_type\": null,\n            \"discussion_held_and_what_discussed\": null,\n            \"contact_date\": null,\n            \"pwod_referral\": null,\n            \"study_for_consideration\": null,\n            \"availability\": null,\n            \"availability_detail\": null,\n            \"next_step\": null,\n            \"do_not_call_until\": null,\n            \"cho_counting_details\": null,\n            \"pump_details\": null,\n            \"dka_details\": null,\n            \"deceased\": \"No\",\n            \"status\": \"Approached - declined\",\n            \"status_details\": \"test detAILS\"\n        },\n        {\n            \"id\": 23,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 24,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 18,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 27,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 20,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        },\n        {\n            \"id\": 26,\n            \"surename\": \"string\",\n            \"first_name\": \"string\",\n            \"current_study\": \"string\",\n            \"previous_study\": [\n                \"string\"\n            ],\n            \"date_of_birth\": \"2021-05-25\",\n            \"gender\": \"string\",\n            \"phone_number\": \"string\",\n            \"phone_type\": [\n                \"string\"\n            ],\n            \"preferred_contact_time\": \"string\",\n            \"preferred_contact_method\": \"string\",\n            \"email\": \"user@example.com\",\n            \"suburb\": \"string\",\n            \"state\": \"string\",\n            \"diabetes_type\": \"string\",\n            \"date_of_diagnosis_of_t1d\": \"string\",\n            \"cho_counting\": [\n                \"string\"\n            ],\n            \"exercise_type\": \"string\",\n            \"exercise_detail\": \"string\",\n            \"current_diabetes_management\": \"string\",\n            \"infusion_line_type\": \"string\",\n            \"current_insulin_use\": [\n                \"string\"\n            ],\n            \"current_cgm_wear\": \"string\",\n            \"past_cgm_wear\": \"string\",\n            \"frequency_of_daily_fingerstick\": \"string\",\n            \"endocrinologist\": \"string\",\n            \"diabetes_educator\": \"string\",\n            \"latest_hba1c_reading\": \"string\",\n            \"latest_hba1c_reading_date\": \"2021-05-25\",\n            \"dka_requiring_hospital_admission_past_12_months\": true,\n            \"hypoglycemic_event_past_12_months\": true,\n            \"hypo_unawareness\": true,\n            \"abnormal_kidney_function\": true,\n            \"retinopathy\": true,\n            \"foot_neuropathy\": true,\n            \"other_medical_issue\": \"string\",\n            \"will_come_to_st_vincent\": true,\n            \"has_internet_access\": true,\n            \"computer_type\": \"string\",\n            \"discussion_held_and_what_discussed\": \"string\",\n            \"contact_date\": \"2021-05-25\",\n            \"pwod_referral\": \"string\",\n            \"study_for_consideration\": \"string\",\n            \"availability\": \"string\",\n            \"availability_detail\": \"string\",\n            \"next_step\": \"string\",\n            \"do_not_call_until\": \"string\",\n            \"cho_counting_details\": \"string\",\n            \"pump_details\": \"string\",\n            \"dka_details\": \"string\",\n            \"deceased\": \"string\",\n            \"status\": null,\n            \"status_details\": null\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"surename\": \"string\",\n    \"first_name\": \"string\",\n    \"current_study\": \"string\",\n    \"previous_study\": [\n        \"string\"\n    ],\n    \"date_of_birth\": \"2021-07-03\",\n    \"gender\": \"string\",\n    \"phone_number\": \"string\",\n    \"phone_type\": [\n        \"string\"\n    ],\n    \"preferred_contact_time\": \"string\",\n    \"preferred_contact_method\": \"string\",\n    \"email\": \"user@example.com\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \n    \"diabetes_type\": \"string\",\n    \"date_of_diagnosis_of_t1d\": \"string\",\n    \"cho_counting\": [\n        \"string\"\n    ],\n    \"exercise_type\": \"string\",\n    \"exercise_detail\": \"string\",\n    \"current_diabetes_management\": \"string\",\n    \"infusion_line_type\": \"string\",\n    \"current_insulin_use\": [\n        \"string\"\n    ],\n    \"current_cgm_wear\": \"string\",\n    \"past_cgm_wear\": \"string\",\n    \"frequency_of_daily_fingerstick\": \"string\",\n    \"endocrinologist\": \"string\",\n    \"diabetes_educator\": \"string\",\n    \"latest_hba1c_reading\": \"string\",\n    \"latest_hba1c_reading_date\": \"2021-07-03\",\n    \"dka_requiring_hospital_admission_past_12_months\": true,\n    \"hypoglycemic_event_past_12_months\": true,\n    \"hypo_unawareness\": true,\n    \"abnormal_kidney_function\": true,\n    \"retinopathy\": true,\n    \"foot_neuropathy\": true,\n    \"other_medical_issue\": \"string\",\n    \"will_come_to_st_vincent\": true,\n    \"has_internet_access\": true,\n    \"computer_type\": \"string\",\n    \"discussion_held_and_what_discussed\": \"string\",\n    \"contact_date\": \"2021-07-03\",\n    \"pwod_referral\": \"string\",\n    \"study_for_consideration\": \"string\",\n    \"availability\": \"string\",\n    \"availability_detail\": \"string\",\n    \"next_step\": \"string\",\n    \"do_not_call_until\": \"string\",\n    \"cho_counting_details\": \"string\",\n    \"pump_details\": \"string\",\n    \"dka_details\": \"string\",\n    \"deceased\": \"string\",\n    \"status\": \"string\",\n    \"status_details\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/patients/",
+              "host": ["{{endpoint}}"],
+              "path": ["patients", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Create",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"surename\": \"string\",\n    \"first_name\": \"string\",\n    \"current_study\": \"string\",\n    \"previous_study\": [\n        \"string\"\n    ],\n    \"date_of_birth\": \"2021-07-03\",\n    \"gender\": \"string\",\n    \"phone_number\": \"string\",\n    \"phone_type\": [\n        \"string\"\n    ],\n    \"preferred_contact_time\": \"string\",\n    \"preferred_contact_method\": \"string\",\n    \"email\": \"user@example.com\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \n    \"diabetes_type\": \"string\",\n    \"date_of_diagnosis_of_t1d\": \"string\",\n    \"cho_counting\": [\n        \"string\"\n    ],\n    \"exercise_type\": \"string\",\n    \"exercise_detail\": \"string\",\n    \"current_diabetes_management\": \"string\",\n    \"infusion_line_type\": \"string\",\n    \"current_insulin_use\": [\n        \"string\"\n    ],\n    \"current_cgm_wear\": \"string\",\n    \"past_cgm_wear\": \"string\",\n    \"frequency_of_daily_fingerstick\": \"string\",\n    \"endocrinologist\": \"string\",\n    \"diabetes_educator\": \"string\",\n    \"latest_hba1c_reading\": \"string\",\n    \"latest_hba1c_reading_date\": \"2021-07-03\",\n    \"dka_requiring_hospital_admission_past_12_months\": true,\n    \"hypoglycemic_event_past_12_months\": true,\n    \"hypo_unawareness\": true,\n    \"abnormal_kidney_function\": true,\n    \"retinopathy\": true,\n    \"foot_neuropathy\": true,\n    \"other_medical_issue\": \"string\",\n    \"will_come_to_st_vincent\": true,\n    \"has_internet_access\": true,\n    \"computer_type\": \"string\",\n    \"discussion_held_and_what_discussed\": \"string\",\n    \"contact_date\": \"2021-07-03\",\n    \"pwod_referral\": \"string\",\n    \"study_for_consideration\": \"string\",\n    \"availability\": \"string\",\n    \"availability_detail\": \"string\",\n    \"next_step\": \"string\",\n    \"do_not_call_until\": \"string\",\n    \"cho_counting_details\": \"string\",\n    \"pump_details\": \"string\",\n    \"dka_details\": \"string\",\n    \"deceased\": \"string\",\n    \"status\": \"string\",\n    \"status_details\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/patients/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["patients", ""]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1359"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:11:12 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 120,\n    \"surename\": \"string\",\n    \"first_name\": \"string\",\n    \"current_study\": \"string\",\n    \"previous_study\": [\n        \"string\"\n    ],\n    \"date_of_birth\": \"2021-07-03\",\n    \"gender\": \"string\",\n    \"phone_number\": \"string\",\n    \"phone_type\": [\n        \"string\"\n    ],\n    \"preferred_contact_time\": \"string\",\n    \"preferred_contact_method\": \"string\",\n    \"email\": \"user@example.com\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \"diabetes_type\": null,\n    \"date_of_diagnosis_of_t1d\": null,\n    \"cho_counting\": null,\n    \"exercise_type\": null,\n    \"exercise_detail\": null,\n    \"current_diabetes_management\": null,\n    \"infusion_line_type\": null,\n    \"current_insulin_use\": null,\n    \"current_cgm_wear\": null,\n    \"past_cgm_wear\": null,\n    \"frequency_of_daily_fingerstick\": null,\n    \"endocrinologist\": null,\n    \"diabetes_educator\": null,\n    \"latest_hba1c_reading\": null,\n    \"latest_hba1c_reading_date\": null,\n    \"dka_requiring_hospital_admission_past_12_months\": false,\n    \"hypoglycemic_event_past_12_months\": false,\n    \"hypo_unawareness\": false,\n    \"abnormal_kidney_function\": false,\n    \"retinopathy\": false,\n    \"foot_neuropathy\": false,\n    \"other_medical_issue\": null,\n    \"will_come_to_st_vincent\": false,\n    \"has_internet_access\": false,\n    \"computer_type\": null,\n    \"discussion_held_and_what_discussed\": null,\n    \"contact_date\": null,\n    \"pwod_referral\": null,\n    \"study_for_consideration\": null,\n    \"availability\": null,\n    \"availability_detail\": null,\n    \"next_step\": null,\n    \"do_not_call_until\": null,\n    \"cho_counting_details\": null,\n    \"pump_details\": null,\n    \"dka_details\": null,\n    \"deceased\": null,\n    \"status\": null,\n    \"status_details\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/patients/:id/",
+              "host": ["{{endpoint}}"],
+              "path": ["patients", ":id", ""],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/patients/1/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["patients", "1", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1537"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:12:12 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"surename\": \"Khademi\",\n    \"first_name\": \"Amir hossein\",\n    \"current_study\": \"All in One\",\n    \"previous_study\": [\n        \"All in One\",\n        \"Glysens PAVE\"\n    ],\n    \"date_of_birth\": \"2021-05-05\",\n    \"gender\": \"Female\",\n    \"phone_number\": \"sdfsds\",\n    \"phone_type\": [\n        \"IOS\"\n    ],\n    \"preferred_contact_time\": \"2021-05-18\",\n    \"preferred_contact_method\": \"Phone\",\n    \"email\": \"a@gmail.com\",\n    \"suburb\": \"sdfsdfsd\",\n    \"state\": \"vic\",\n    \"diabetes_type\": \"Type 2\",\n    \"date_of_diagnosis_of_t1d\": \"2021-05-05\",\n    \"cho_counting\": [\n        \"Food App\",\n        \"Other\"\n    ],\n    \"exercise_type\": \"Structured\",\n    \"exercise_detail\": \"ex det\",\n    \"current_diabetes_management\": \"Other\",\n    \"infusion_line_type\": \"45 Degree\",\n    \"current_insulin_use\": [\n        \"Toujeo\"\n    ],\n    \"current_cgm_wear\": \"Guardian Connect\",\n    \"past_cgm_wear\": \"Guardian Connect\",\n    \"frequency_of_daily_fingerstick\": \"0-2\",\n    \"endocrinologist\": \"sdfsdf\",\n    \"diabetes_educator\": \"sdfsdf\",\n    \"latest_hba1c_reading\": \"12\",\n    \"latest_hba1c_reading_date\": \"2021-05-18\",\n    \"dka_requiring_hospital_admission_past_12_months\": true,\n    \"hypoglycemic_event_past_12_months\": false,\n    \"hypo_unawareness\": false,\n    \"abnormal_kidney_function\": false,\n    \"retinopathy\": true,\n    \"foot_neuropathy\": true,\n    \"other_medical_issue\": \"medical detail\",\n    \"will_come_to_st_vincent\": true,\n    \"has_internet_access\": true,\n    \"computer_type\": \"Mac\",\n    \"discussion_held_and_what_discussed\": \"asdsad\",\n    \"contact_date\": \"2021-06-23\",\n    \"pwod_referral\": \"asdas\",\n    \"study_for_consideration\": \"asd\",\n    \"availability\": \"Weekly\",\n    \"availability_detail\": \"asd\",\n    \"next_step\": \"asd\",\n    \"do_not_call_until\": \"asd\",\n    \"cho_counting_details\": \"test cho det\",\n    \"pump_details\": \"pump det\",\n    \"dka_details\": \"skdjfkjsdf\",\n    \"deceased\": \"No\",\n    \"status\": null,\n    \"status_details\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"surename\": \"updated surename\",\n  \"first_name\": \"string\",\n  \"current_study\": \"string\",\n  \"previous_study\": [\n    \"string\"\n  ],\n  \"date_of_birth\": \"2021-07-03\",\n  \"gender\": \"string\",\n  \"phone_number\": \"string\",\n  \"phone_type\": [\n    \"string\"\n  ],\n  \"preferred_contact_time\": \"string\",\n  \"preferred_contact_method\": \"string\",\n  \"email\": \"user@example.com\",\n  \"suburb\": \"string\",\n  \"state\": \"string\",\n  \"diabetes_type\": \"string\",\n  \"date_of_diagnosis_of_t1d\": \"string\",\n  \"cho_counting\": [\n    \"string\"\n  ],\n  \"exercise_type\": \"string\",\n  \"exercise_detail\": \"string\",\n  \"current_diabetes_management\": \"string\",\n  \"infusion_line_type\": \"string\",\n  \"current_insulin_use\": [\n    \"string\"\n  ],\n  \"current_cgm_wear\": \"string\",\n  \"past_cgm_wear\": \"string\",\n  \"frequency_of_daily_fingerstick\": \"string\",\n  \"endocrinologist\": \"string\",\n  \"diabetes_educator\": \"string\",\n  \"latest_hba1c_reading\": \"string\",\n  \"latest_hba1c_reading_date\": \"2021-07-03\",\n  \"dka_requiring_hospital_admission_past_12_months\": true,\n  \"hypoglycemic_event_past_12_months\": true,\n  \"hypo_unawareness\": true,\n  \"abnormal_kidney_function\": true,\n  \"retinopathy\": true,\n  \"foot_neuropathy\": true,\n  \"other_medical_issue\": \"string\",\n  \"will_come_to_st_vincent\": true,\n  \"has_internet_access\": true,\n  \"computer_type\": \"string\",\n  \"discussion_held_and_what_discussed\": \"string\",\n  \"contact_date\": \"2021-07-03\",\n  \"pwod_referral\": \"string\",\n  \"study_for_consideration\": \"string\",\n  \"availability\": \"string\",\n  \"availability_detail\": \"string\",\n  \"next_step\": \"string\",\n  \"do_not_call_until\": \"string\",\n  \"cho_counting_details\": \"string\",\n  \"pump_details\": \"string\",\n  \"dka_details\": \"string\",\n  \"deceased\": \"string\",\n  \"status\": \"string\",\n  \"status_details\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/patients/:id/",
+              "host": ["{{endpoint}}"],
+              "path": ["patients", ":id", ""],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"surename\": \"updated surename\",\n  \"first_name\": \"string\",\n  \"current_study\": \"string\",\n  \"previous_study\": [\n    \"string\"\n  ],\n  \"date_of_birth\": \"2021-07-03\",\n  \"gender\": \"string\",\n  \"phone_number\": \"string\",\n  \"phone_type\": [\n    \"string\"\n  ],\n  \"preferred_contact_time\": \"string\",\n  \"preferred_contact_method\": \"string\",\n  \"email\": \"user@example.com\",\n  \"suburb\": \"string\",\n  \"state\": \"string\",\n  \"diabetes_type\": \"string\",\n  \"date_of_diagnosis_of_t1d\": \"string\",\n  \"cho_counting\": [\n    \"string\"\n  ],\n  \"exercise_type\": \"string\",\n  \"exercise_detail\": \"string\",\n  \"current_diabetes_management\": \"string\",\n  \"infusion_line_type\": \"string\",\n  \"current_insulin_use\": [\n    \"string\"\n  ],\n  \"current_cgm_wear\": \"string\",\n  \"past_cgm_wear\": \"string\",\n  \"frequency_of_daily_fingerstick\": \"string\",\n  \"endocrinologist\": \"string\",\n  \"diabetes_educator\": \"string\",\n  \"latest_hba1c_reading\": \"string\",\n  \"latest_hba1c_reading_date\": \"2021-07-03\",\n  \"dka_requiring_hospital_admission_past_12_months\": true,\n  \"hypoglycemic_event_past_12_months\": true,\n  \"hypo_unawareness\": true,\n  \"abnormal_kidney_function\": true,\n  \"retinopathy\": true,\n  \"foot_neuropathy\": true,\n  \"other_medical_issue\": \"string\",\n  \"will_come_to_st_vincent\": true,\n  \"has_internet_access\": true,\n  \"computer_type\": \"string\",\n  \"discussion_held_and_what_discussed\": \"string\",\n  \"contact_date\": \"2021-07-03\",\n  \"pwod_referral\": \"string\",\n  \"study_for_consideration\": \"string\",\n  \"availability\": \"string\",\n  \"availability_detail\": \"string\",\n  \"next_step\": \"string\",\n  \"do_not_call_until\": \"string\",\n  \"cho_counting_details\": \"string\",\n  \"pump_details\": \"string\",\n  \"dka_details\": \"string\",\n  \"deceased\": \"string\",\n  \"status\": \"string\",\n  \"status_details\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/patients/120/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["patients", "120", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1497"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:13:50 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 120,\n    \"surename\": \"updated surename\",\n    \"first_name\": \"string\",\n    \"current_study\": \"string\",\n    \"previous_study\": [\n        \"string\"\n    ],\n    \"date_of_birth\": \"2021-07-03\",\n    \"gender\": \"string\",\n    \"phone_number\": \"string\",\n    \"phone_type\": [\n        \"string\"\n    ],\n    \"preferred_contact_time\": \"string\",\n    \"preferred_contact_method\": \"string\",\n    \"email\": \"user@example.com\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \"diabetes_type\": \"string\",\n    \"date_of_diagnosis_of_t1d\": \"string\",\n    \"cho_counting\": [\n        \"string\"\n    ],\n    \"exercise_type\": \"string\",\n    \"exercise_detail\": \"string\",\n    \"current_diabetes_management\": \"string\",\n    \"infusion_line_type\": \"string\",\n    \"current_insulin_use\": [\n        \"string\"\n    ],\n    \"current_cgm_wear\": \"string\",\n    \"past_cgm_wear\": \"string\",\n    \"frequency_of_daily_fingerstick\": \"string\",\n    \"endocrinologist\": \"string\",\n    \"diabetes_educator\": \"string\",\n    \"latest_hba1c_reading\": \"string\",\n    \"latest_hba1c_reading_date\": \"2021-07-03\",\n    \"dka_requiring_hospital_admission_past_12_months\": true,\n    \"hypoglycemic_event_past_12_months\": true,\n    \"hypo_unawareness\": true,\n    \"abnormal_kidney_function\": true,\n    \"retinopathy\": true,\n    \"foot_neuropathy\": true,\n    \"other_medical_issue\": \"string\",\n    \"will_come_to_st_vincent\": true,\n    \"has_internet_access\": true,\n    \"computer_type\": \"string\",\n    \"discussion_held_and_what_discussed\": \"string\",\n    \"contact_date\": \"2021-07-03\",\n    \"pwod_referral\": \"string\",\n    \"study_for_consideration\": \"string\",\n    \"availability\": \"string\",\n    \"availability_detail\": \"string\",\n    \"next_step\": \"string\",\n    \"do_not_call_until\": \"string\",\n    \"cho_counting_details\": \"string\",\n    \"pump_details\": \"string\",\n    \"dka_details\": \"string\",\n    \"deceased\": \"string\",\n    \"status\": \"string\",\n    \"status_details\": \"string\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Assets",
+      "item": [
+        {
+          "name": "filters",
+          "item": [
+            {
+              "name": "by status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/assets?status=allocated",
+                  "host": ["{{endpoint}}"],
+                  "path": ["assets"],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "allocated"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "by lot_number",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/assets?lot_number=11",
+                  "host": ["{{endpoint}}"],
+                  "path": ["assets"],
+                  "query": [
+                    {
+                      "key": "lot_number",
+                      "value": "11"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "expiration_date",
+                  "value": "2021-07-11",
+                  "type": "text"
+                },
+                {
+                  "key": "patient",
+                  "value": "1316",
+                  "description": "this field can be send or not. if it's not send then the asset will be assigned to default warehouse patient with status warehouse, otherwise asset will be assigned to given patient with status allocated.",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "lot_number",
+                  "value": "11",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/mehran/Desktop/otdzarzwtrc41.jpg"
+                },
+                {
+                  "key": "serial_number",
+                  "value": "458754",
+                  "type": "text"
+                },
+                {
+                  "key": "ownership",
+                  "value": "investigational_sponsor",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "hardware",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "sensors",
+                  "type": "text"
+                },
+                {
+                  "key": "study",
+                  "value": "opal",
+                  "type": "text"
+                }
+              ],
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/assets/",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/assets/",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By Patient ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/assets?patient_id=1316",
+              "host": ["{{endpoint}}"],
+              "path": ["assets"],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1316"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"expiration_date\": \"2021-07-11\",\n    \"patient\": 1316,\n    \"lot_number\": 11,\n    \"serial_number\": 4587549\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/assets/40",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", "40"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/assets/35",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", "35"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Export",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/assets/export/",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", "export", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Export",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/assets/export/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["assets", "export", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "plain",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Aug 2021 23:48:48 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.9.6"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                },
+                {
+                  "key": "Content-Disposition",
+                  "value": "attachment; filename=\"assets_export.csv\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1020"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "status,ownership,category,type,patient_id,lot_number,expiration_date,serial_number,created_at\r\nwarehouse,,,1316,1407,2021-07-11,796484,2021-08-09 12:55:16.404755+00:00\r\nwarehouse,,,1316,14078754,2021-07-11,21479694,2021-08-09 12:57:14.727423+00:00\r\nwarehouse,,,1316,413678,2021-07-11,4512687,2021-08-09 12:57:27.965310+00:00\r\nwarehouse,,,1316,45066777,2021-07-11,1469745,2021-08-09 13:36:28.385336+00:00\r\nwarehouse,hi,hi,1316,11,2021-07-11,458754,2021-08-29 23:01:41.264700+00:00\r\nwarehouse,,,1316,11,2021-07-11,458754,2021-08-29 23:03:33.027597+00:00\r\nwarehouse,investigational,sensors,1316,11,2021-07-11,458754,2021-08-29 23:06:27.101385+00:00\r\nwarehouse,investigational,sensors,142,11,2021-07-11,458754,2021-08-29 23:15:18.349554+00:00\r\nwarehouse,investigational,sensors,142,11,2021-07-11,458754,2021-08-29 23:16:07.075101+00:00\r\nwarehouse,investigational,sensors,142,11,2021-07-11,458754,2021-08-29 23:22:02.307554+00:00\r\nallocated,investigational,sensors,1316,11,2021-07-11,458754,2021-08-29 23:28:43.929056+00:00\r\n"
+            }
+          ]
+        },
+        {
+          "name": "Change Ownership",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"patient\": 1316\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/assets/40",
+              "host": ["{{endpoint}}"],
+              "path": ["assets", "40"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Interactions",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/interactions/?patient_id=1",
+              "host": ["{{endpoint}}"],
+              "path": ["interactions", ""],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/interactions/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["interactions", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1862"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:16:31 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 8,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"interaction_type\": \"in_person\",\n            \"interaction_datetime\": \"2021-06-29 14:37:02.880000+00:00\",\n            \"contact_admin\": \"string\",\n            \"contact_details\": \"string\"\n        },\n        {\n            \"id\": 2,\n            \"interaction_type\": \"email\",\n            \"interaction_datetime\": \"2021-06-29 18:11:35.943626+00:00\",\n            \"contact_admin\": \"Sunny test admin\",\n            \"contact_details\": \"Test details\"\n        },\n        {\n            \"id\": 3,\n            \"interaction_type\": \"email\",\n            \"interaction_datetime\": \"2021-06-29 18:14:28.959860+00:00\",\n            \"contact_admin\": \"testttt\",\n            \"contact_details\": \"sfsdfsdf\"\n        },\n        {\n            \"id\": 4,\n            \"interaction_type\": \"in_person\",\n            \"interaction_datetime\": \"2021-06-29 18:15:36.267719+00:00\",\n            \"contact_admin\": \"sssss\",\n            \"contact_details\": \"dfdfdf\"\n        },\n        {\n            \"id\": 5,\n            \"interaction_type\": \"in person\",\n            \"interaction_datetime\": \"2021-06-29 00:00:00+00:00\",\n            \"contact_admin\": \"string\",\n            \"contact_details\": \"string\"\n        },\n        {\n            \"id\": 6,\n            \"interaction_type\": \"phone call\",\n            \"interaction_datetime\": \"2021-07-01 13:30:00+00:00\",\n            \"contact_admin\": \"DTRG\",\n            \"contact_details\": \"test detals\"\n        },\n        {\n            \"id\": 7,\n            \"interaction_type\": \"email\",\n            \"interaction_datetime\": \"2021-07-01 13:30:00+00:00\",\n            \"contact_admin\": \"DTRG\",\n            \"contact_details\": \"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,\"\n        },\n        {\n            \"id\": 8,\n            \"interaction_type\": \"in person\",\n            \"interaction_datetime\": \"2021-07-01 08:28:00+00:00\",\n            \"contact_admin\": \"DTRGFFF\",\n            \"contact_details\": \"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interaction_type\": \"in person\",\n  \"interaction_datetime\": \"2021-06-07\",\n  \"contact_admin\": \"string\",\n  \"contact_details\": \"string\",\n  \"patient\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/interactions/",
+              "host": ["{{endpoint}}"],
+              "path": ["interactions", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Create",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interaction_type\": \"in person\",\n  \"interaction_datetime\": \"2021-06-07\",\n  \"contact_admin\": \"string\",\n  \"contact_details\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/interactions/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["interactions", ""]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "127"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:17:23 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 9,\n    \"interaction_type\": \"in person\",\n    \"interaction_datetime\": \"2021-06-07\",\n    \"contact_admin\": \"string\",\n    \"contact_details\": \"string\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/interactions/:id/",
+              "host": ["{{endpoint}}"],
+              "path": ["interactions", ":id", ""],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/interactions/:id/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["interactions", ":id", ""],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "9"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "142"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:17:39 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 9,\n    \"interaction_type\": \"in person\",\n    \"interaction_datetime\": \"2021-06-07 00:00:00+00:00\",\n    \"contact_admin\": \"string\",\n    \"contact_details\": \"string\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interaction_type\": \"in person\",\n  \"interaction_datetime\": \"2021-06-07\",\n  \"contact_admin\": \"updated_admin\",\n  \"contact_details\": \"updated contact details\",\n  \"patient\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/interactions/:id/",
+              "host": ["{{endpoint}}"],
+              "path": ["interactions", ":id", ""],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "21"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interaction_type\": \"in person\",\n  \"interaction_datetime\": \"2021-06-07\",\n  \"contact_admin\": \"updated_admin\",\n  \"contact_details\": \"updated contact details\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{endpoint}}/interactions/:id/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["interactions", ":id", ""],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "9"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "151"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:18:28 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 9,\n    \"interaction_type\": \"in person\",\n    \"interaction_datetime\": \"2021-06-07\",\n    \"contact_admin\": \"updated_admin\",\n    \"contact_details\": \"updated contact details\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/interactions/:id/?patient_id=1",
+              "host": ["{{endpoint}}"],
+              "path": ["interactions", ":id", ""],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "21"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{endpoint}}/interactions/:id/",
+                  "host": ["{{endpoint}}"],
+                  "path": ["interactions", ":id", ""],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "9"
+                    }
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "plain",
+              "header": [
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Jul 2021 17:18:39 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Studies",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8000/studies/",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["studies", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"current_study\": \"some study\",\n    \"study_status\": \"some status\",\n    \"status_details\": \"some details\",\n    \"patient\": 1316\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/studies/",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["studies", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Create",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"current_study\": \"some study\",\n    \"study_status\": \"some status\",\n    \"status_details\": \"some details\",\n    \"previous_study\": {\n        \"All in One\": true,\n        \"Glysens PAVE\": false,\n        \"Glysens FREE\": false,\n        \"Additional Signals PWOD\": false,\n        \"Fiasp Original V1\": false,\n        \"Fiasp Extension V2\": true,\n        \"Clear\": false,\n        \"FAME 1 EYE\": false,\n        \"MEWS\": false,\n        \"Serodus\": true,\n        \"FLASH\": false,\n        \"Additional Signals\": false,\n        \"Optimapp\": false,\n        \"Biocap Feasibility\": false,\n        \"No previous study involvement\": false,\n        \"Other\": false\n    },\n    \"patient\": 1316\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8000/studies/",
+                  "host": ["localhost"],
+                  "port": "8000",
+                  "path": ["studies", ""]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jul 2021 19:54:39 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.9.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "474"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"current_study\": \"some study\",\n    \"study_status\": \"some status\",\n    \"status_details\": \"some details\",\n    \"previous_study\": {\n        \"All in One\": true,\n        \"Glysens PAVE\": false,\n        \"Glysens FREE\": false,\n        \"Additional Signals PWOD\": false,\n        \"Fiasp Original V1\": false,\n        \"Fiasp Extension V2\": true,\n        \"Clear\": false,\n        \"FAME 1 EYE\": false,\n        \"MEWS\": false,\n        \"Serodus\": true,\n        \"FLASH\": false,\n        \"Additional Signals\": false,\n        \"Optimapp\": false,\n        \"Biocap Feasibility\": false,\n        \"No previous study involvement\": false,\n        \"Other\": false\n    },\n    \"patient\": 1316\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8000/studies/4?patient_id=1316",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["studies", "4"],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1316"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8000/studies/1?patient_id=1316",
+                  "host": ["localhost"],
+                  "port": "8000",
+                  "path": ["studies", "1"],
+                  "query": [
+                    {
+                      "key": "patient_id",
+                      "value": "1316"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jul 2021 20:06:05 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.9.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "474"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"current_study\": \"some study\",\n    \"study_status\": \"some status\",\n    \"status_details\": \"some details\",\n    \"previous_study\": {\n        \"MEWS\": false,\n        \"Clear\": false,\n        \"FLASH\": false,\n        \"Other\": false,\n        \"Serodus\": true,\n        \"Optimapp\": false,\n        \"All in One\": true,\n        \"FAME 1 EYE\": false,\n        \"Glysens FREE\": false,\n        \"Glysens PAVE\": false,\n        \"Fiasp Original V1\": false,\n        \"Additional Signals\": false,\n        \"Biocap Feasibility\": false,\n        \"Fiasp Extension V2\": true,\n        \"Additional Signals PWOD\": false,\n        \"No previous study involvement\": false\n    },\n    \"patient\": 1316\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"current_study\": \"new some study\",\n    \"study_status\": \"some status\",\n    \"status_details\": \"some details\",\n    \"patient\": 1316\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/studies/1/",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["studies", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8000/studies/1/?patient_id=1316",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["studies", "1", ""],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1316"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Previous Studies",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"all_in_one\": false,\n        \"glysens_pave\": false,\n        \"glysens_free\": false,\n        \"Additional_Signals_PWOD\": false,\n        \"fiasp_original_v1\": false,\n        \"fiasp_extension_v2\": false,\n        \"clear\": false,\n        \"fame_1_eye\": false,\n        \"mews\": false,\n        \"serodus\": false,\n        \"flash\": false,\n        \"additional_signals\": false,\n        \"optimapp\": false,\n        \"biocap_feasibility\": false,\n        \"no_previous_study_involvement\": false,\n        \"other\": false,\n        \"patient\": 1316\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/prev-studies/",
+              "host": ["{{endpoint}}"],
+              "path": ["prev-studies", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/prev-studies/",
+              "host": ["{{endpoint}}"],
+              "path": ["prev-studies", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/prev-studies/1?patient_id=1316",
+              "host": ["{{endpoint}}"],
+              "path": ["prev-studies", "1"],
+              "query": [
+                {
+                  "key": "patient_id",
+                  "value": "1316"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "endpoint",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
+
+
+
+{
+	"info": {
+		"_postman_id": "09da70e7-3728-4d2d-80f6-15a050acafcb",
+		"name": "CRM Patients Advanced Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List with filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/patients/",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"patients",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"description": "string type",
+							"disabled": true
+						},
+						{
+							"key": "diabetes_type",
+							"value": "",
+							"description": "string type",
+							"disabled": true
+						},
+						{
+							"key": "current_diabetes_management",
+							"value": "",
+							"description": "string type",
+							"disabled": true
+						},
+						{
+							"key": "current_cgm_wear",
+							"value": null,
+							"description": "string type",
+							"disabled": true
+						},
+						{
+							"key": "date_of_diagnosis_of",
+							"value": null,
+							"description": "string type",
+							"disabled": true
+						},
+						{
+							"key": "dka_requiring_hospital_admission_past_12_months",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "hypoglycemic_event_past_12_months",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "hypo_unawareness",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "abnormal_kidney_function",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "retinopathy",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "foot_neuropathy",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "will_come_to_st_vincent",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "has_internet_access",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "warehouse_account",
+							"value": null,
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "latest_hba1c_reading_min",
+							"value": "10",
+							"description": "date",
+							"disabled": true
+						},
+						{
+							"key": "latest_hba1c_reading_max",
+							"value": "100",
+							"description": "date",
+							"disabled": true
+						},
+						{
+							"key": "age_category",
+							"value": "21-26",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
+
+
+{
+	"info": {
+		"_postman_id": "df87e621-9e22-4547-8681-ffee1207b3be",
+		"name": "CRM Audit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Audit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/reports/audit/patients/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"reports",
+						"audit",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@dtrgcrm.dev\",\n    \"password\": \"dev_password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/users/login/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
