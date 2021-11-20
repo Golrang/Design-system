@@ -1,7 +1,5 @@
-import { Button } from 'components/button'
-import { Error } from 'components/error'
 import { useValidation } from 'hooks/use-validation'
-import { ICDelete } from 'icons'
+
 import { ComponentProps, memo } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import { classNames } from 'utils'
@@ -12,7 +10,7 @@ type TFormSelect = {
   validation?: Function
 } & ComponentProps<'select'>
 
-export const FormSelect = memo(
+export const Select = memo(
   ({
     label,
     children,
@@ -23,7 +21,7 @@ export const FormSelect = memo(
     validation,
     ...rest
   }: TFormSelect) => {
-    const { control, setValue } = useFormContext()
+    const { control } = useFormContext()
     const { validate } = useValidation({ required, validation })
 
     return (
@@ -63,27 +61,6 @@ export const FormSelect = memo(
               </option>
               {children}
             </select>
-            <div className="flex items-center absolute top-0 right-0 mt-12 mr-8">
-              {value && setValue && (
-                <Button
-                  type="button"
-                  className="mr-1"
-                  icon
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    if (setValue) {
-                      setValue(name, '')
-                    }
-                  }}
-                >
-                  <ICDelete
-                    role="delete"
-                    className="w-4 h-4 text-red-500  z-30"
-                  />
-                </Button>
-              )}
-            </div>
-            <Error error={error} className="absolute top-0 left-0 mt-[87px]" />
           </div>
         )}
       />

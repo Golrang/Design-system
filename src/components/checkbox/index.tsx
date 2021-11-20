@@ -6,7 +6,7 @@ export type TFormCheckBox = {
   label?: string
 } & Omit<ComponentProps<'input'>, 'type' | 'id'>
 
-export const FormCheckBox = memo(
+export const CheckBox = memo(
   ({ label, name, disabled, ...rest }: TFormCheckBox): JSX.Element => {
     const id = useMemo(() => uuid(), [])
     const { control } = useFormContext()

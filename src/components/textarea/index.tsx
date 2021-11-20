@@ -1,7 +1,6 @@
 import { ComponentProps, memo } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import { useValidation } from 'hooks/use-validation'
-import { Error } from 'components/error'
 import { classNames } from 'utils/classes'
 
 type TFormTextArea = {
@@ -12,7 +11,7 @@ type TFormTextArea = {
   min?: number
 } & Omit<ComponentProps<'textarea'>, 'onChange'>
 
-export const FormTextArea = memo(
+export const TextArea = memo(
   ({
     label,
     size,
@@ -69,13 +68,6 @@ export const FormTextArea = memo(
                   : 'h-12 min-h-[3rem] pt-2.5'
               )}
               {...rest}
-            />
-            <Error
-              error={error}
-              className={classNames(
-                'absolute  left-0',
-                expanded ? 'top-[155px]' : 'top-[75px]'
-              )}
             />
           </div>
         )}

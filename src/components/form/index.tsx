@@ -3,7 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 type TFormControl = { defaultValues?: any } & ComponentProps<'form'>
 
-export const FormControl = memo(
+export const Form = memo(
   ({ children, onSubmit, defaultValues, ...rest }: TFormControl) => {
     const { control, handleSubmit, setValue } = useForm({ defaultValues })
 

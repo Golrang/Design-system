@@ -1,4 +1,3 @@
-import { Error } from 'components/error'
 import { useValidation } from 'hooks/use-validation'
 import { ComponentProps, memo } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
@@ -14,7 +13,7 @@ type TFormInput = {
   hours?: boolean
 } & ComponentProps<'input'>
 
-export const FormInput = memo(
+export const Input = memo(
   ({
     label,
     className,
@@ -81,13 +80,6 @@ export const FormInput = memo(
                   : 'h-12'
               )}
               {...rest}
-            />
-            <Error
-              error={error}
-              className={classNames(
-                'absolute left-0',
-                label ? ' top-[78px]' : 'top-[45px]'
-              )}
             />
           </div>
         )}
