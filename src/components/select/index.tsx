@@ -49,15 +49,15 @@ export const Select = memo(
               defaultValue={value || ''}
               onChange={onChange}
               className={classNames(
-                ' h-12',
+                ' h-12 px-4',
                 error
-                  ? 'rounded border-2 border-red-400 shadow'
-                  : 'rounded border border-light dark:border-dark',
+                  ? 'border-2 border-red-400 shadow'
+                  : 'border border-gray-300 focus:ring-2 focus:ring-indigo-400 dark:border-gray-700 dark:focus:ring-indigo-600',
                 !value && 'text-gray-700'
               )}
               {...rest}
             >
-              <option value="" selected disabled hidden>
+              <option value="" disabled hidden>
                 Select an option
               </option>
               {children}

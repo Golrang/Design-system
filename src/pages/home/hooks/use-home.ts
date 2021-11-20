@@ -3,9 +3,10 @@ import { useCallback } from 'react'
 import { service } from './services'
 
 export const useHome = () => {
-  const { mutate } = useMutation(service)
+  const { mutate, isLoading } = useMutation(service)
 
   return {
+    isLoading,
     onSubmit: useCallback((state: { details: string; user: string }) => {
       const payload = {
         id: 1,

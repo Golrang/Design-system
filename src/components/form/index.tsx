@@ -3,8 +3,8 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
 type TFormControl = {
   defaultValues?: any
-  onSubmit: SubmitHandler<FormEvent<HTMLFormElement>>
-} & ComponentProps<'form'>
+  onSubmit: (state: any) => void
+} & Omit<ComponentProps<'form'>, 'onSubmit'>
 
 export const Form = memo(
   ({ children, onSubmit, defaultValues, ...rest }: TFormControl) => {

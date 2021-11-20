@@ -12,6 +12,8 @@ type TFormInput = {
   validation?: Function
   hours?: boolean
   name: string
+  min?: number
+  max?: number
 } & ComponentProps<'input'>
 
 export const Input = memo(

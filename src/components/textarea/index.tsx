@@ -45,7 +45,7 @@ export const TextArea = memo(
             {label && (
               <label
                 className={classNames(
-                  ' mb-2 text-gray-800 dark:text-gray-300',
+                  ' mb-2 text-light dark:text-dark',
                   size === 'small' ? 'text-xs' : 'text-base'
                 )}
               >
@@ -57,16 +57,15 @@ export const TextArea = memo(
               ref={ref}
               onChange={(e) => onChange(e.target.value)}
               className={classNames(
+                'px-4 pt-2.5',
                 error
-                  ? 'border-2 border-red-400'
-                  : 'border border-gray-300 focus:ring-2  focus:ring-indigo-400 dark:border-gray-700 dark:focus:ring-indigo-600 dark:focus:ring-2',
+                  ? 'border-2 border-red-400 shadow'
+                  : 'border border-gray-300 focus:ring-2 focus:ring-indigo-400 dark:border-gray-700 dark:focus:ring-indigo-600',
                 size === 'large'
                   ? 'h-14 '
                   : size === 'small'
-                  ? 'h-8 text-[13px] min-h-[1.6rem] py-1'
-                  : expanded
-                  ? 'h-32 min-h-[3rem] pt-2.5'
-                  : 'h-12 min-h-[3rem] pt-2.5'
+                  ? 'h-8 text-[13px]'
+                  : 'h-12'
               )}
               {...rest}
             />

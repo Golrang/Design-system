@@ -3,7 +3,7 @@ import { Check, City, Details, Submit, User } from '../components'
 import { useHome } from '../hooks'
 
 export const HomeForm = () => {
-  const { onSubmit } = useHome()
+  const { onSubmit, isLoading } = useHome()
 
   return (
     <Form className="grid grid-cols-1 gap-6" onSubmit={onSubmit}>
@@ -11,7 +11,7 @@ export const HomeForm = () => {
       <City />
       <Details />
       <Check />
-      <Submit />
+      <Submit isLoading={isLoading} />
     </Form>
   )
 }

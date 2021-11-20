@@ -1,7 +1,7 @@
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
+  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   mode: 'jit',
-  darkMode: 'class',
+  //darkMode: 'class',
   theme: {
     extend: {
       animation: {
@@ -61,8 +61,4 @@ module.exports = {
   variants: {
     extend: {},
   },
-  // plugins: [
-  //   require('@tailwindcss/forms'),
-  //   // ...
-  // ],
 }
