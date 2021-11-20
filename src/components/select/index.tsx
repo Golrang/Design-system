@@ -5,6 +5,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { classNames } from 'utils'
 
 type TFormSelect = {
+  name: string
   label?: string
   size?: 'small' | 'large' | 'default'
   validation?: Function

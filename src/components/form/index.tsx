@@ -1,7 +1,10 @@
-import { ComponentProps, memo } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
+import { ComponentProps, memo, FormEvent } from 'react'
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
-type TFormControl = { defaultValues?: any } & ComponentProps<'form'>
+type TFormControl = {
+  defaultValues?: any
+  onSubmit: SubmitHandler<FormEvent<HTMLFormElement>>
+} & ComponentProps<'form'>
 
 export const Form = memo(
   ({ children, onSubmit, defaultValues, ...rest }: TFormControl) => {

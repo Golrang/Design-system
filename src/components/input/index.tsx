@@ -11,6 +11,7 @@ type TFormInput = {
   later?: boolean
   validation?: Function
   hours?: boolean
+  name: string
 } & ComponentProps<'input'>
 
 export const Input = memo(

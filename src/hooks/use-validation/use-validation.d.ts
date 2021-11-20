@@ -1,8 +1,8 @@
 interface IUseValidation {
-  later?: boolean | undefined
-  required?: boolean | undefined
-  min?: string | number | undefined
-  max?: string | number | undefined
+  later?: boolean
+  required?: boolean
+  min?: number
+  max?: number
   validation?: any
   precent?: boolean
   hours?: boolean

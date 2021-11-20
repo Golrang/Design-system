@@ -25,7 +25,7 @@ export const useValidation = (props: IUseValidation) => {
 
   return {
     validate: useCallback(
-      (value) => {
+      (value: any) => {
         let error
         if (required) {
           const requiredError = requiredValidation(value, required)

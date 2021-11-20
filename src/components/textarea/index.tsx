@@ -4,6 +4,7 @@ import { useValidation } from 'hooks/use-validation'
 import { classNames } from 'utils/classes'
 
 type TFormTextArea = {
+  name: string
   label?: string
   size?: 'small' | 'large' | 'default'
   expanded?: boolean

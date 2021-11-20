@@ -4,12 +4,11 @@ const webpack = require('webpack')
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
-
   devServer: {
     port: '8001',
     open: true,
     historyApiFallback: true,
-    //hot: true,
+    // hot: true,
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
