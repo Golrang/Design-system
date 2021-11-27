@@ -1,63 +1,68 @@
+import axios from 'axios'
 import { Form } from 'components/form'
-import { Check, City, Details, Submit, User } from '../components'
-import { useFormArray, useHome } from '../hooks'
+import { useFormContext, useWatch } from 'react-hook-form'
+import { useQuery } from 'react-query'
+import { memo } from 'react'
+import {
+  Check,
+  City,
+  Details,
+  Password,
+  Street,
+  Submit,
+  User,
+} from '../components'
+import { useHome } from '../hooks'
 
-export const HomeForm = () => {
-  // const { onSubmit, isLoading } = useHome()
-  const { fields, state, onAppend, onChange, onRemove } = useFormArray()
+const DynamicStreet = memo(() => {
+  const { control, setValue } = useFormContext()
 
-  return (
-    <form
-      className="grid grid-cols-1 gap-6"
-      onSubmit={(e) => e.preventDefault()}
-    >
-      {fields.map((field: any, index: number) => (
-        <div key={field.id} className="grid grid-cols-4 gap-x-2">
-          <input
-            type="text"
-            name={`first${field.id}`}
-            onChange={onChange(index)}
-            value={state[index]?.[`first${field.id}`]}
-          />
-          <input
-            type="text"
-            name={`last${field.id}`}
-            onChange={onChange(index)}
-            value={state[index]?.[`last${field.id}`]}
-          />
-          <input
-            type="text"
-            name={`pass${field.id}`}
-            onChange={onChange(index)}
-            value={state[index]?.[`pass${field.id}`]}
-          />
-          <button onClick={onRemove(index)}>delete</button>
-        </div>
-      ))}
-      <button
-        type="button"
-        className="w-full h-12 rounded bg-green-600"
-        onClick={onAppend}
-      >
-        add
-      </button>
-      <button
-        type="submit"
-        className="w-full h-12 rounded bg-blue-600"
-        onClick={() => console.log(state)}
-      >
-        Submit
-      </button>
-    </form>
+  const state = useWatch({ control, name: 'city' })
+
+  const { data, isLoading } = useQuery(
+    ['street', state],
+    async () =>
+      await axios(`https://jsonplaceholder.typicode.com/posts/${state}`),
+    {
+      enabled: !!state,
+      onSuccess: (data) => setValue('user', data?.data?.title),
+    }
   )
 
-  // return (
-  //   <Form className="grid grid-cols-1 gap-6" onSubmit={onSubmit}>
-  //     <User />
-  //     <City />
-  //     <Details />
-  //     <Check />
-  //     <Submit isLoading={isLoading} />
-  //   </Form>
-  // )
+  if (isLoading) return <div>Loading...</div>
+  return <Street data={data} />
+})
+
+const TempButton = memo(() => {
+  const { control, setError } = useFormContext()
+
+  const state = useWatch({ control, name: 'details' })
+
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        !state && setError('detials', { message: 'Is required', type: 'un' })
+      }
+    >
+      Temp
+    </button>
+  )
+})
+
+export const HomeForm = () => {
+  const { onSubmit, isLoading } = useHome()
+
+  return (
+    <Form className="grid grid-cols-1 gap-6" onSubmit={onSubmit}>
+      <User />
+      <Password />
+      <City />
+      <DynamicStreet />
+      <Details />
+      <Check />
+      <TempButton />
+      <Submit isLoading={isLoading} />
+    </Form>
+  )
 }
