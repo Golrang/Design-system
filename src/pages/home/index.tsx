@@ -1,9 +1,9 @@
-import { HomeForm } from './containers'
+import { TodoList } from './containers'
 
 const View = () => {
   return (
     <div className="p-40 max-w-4xl mx-auto">
-      <HomeForm />
+      <TodoList />
     </div>
   )
 }
