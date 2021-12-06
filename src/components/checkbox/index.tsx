@@ -1,5 +1,5 @@
 import { ComponentProps, memo } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 
 export type TFormCheckBox = {
   label?: string
@@ -8,12 +8,9 @@ export type TFormCheckBox = {
 
 export const CheckBox = memo(
   ({ label, name, disabled, ...rest }: TFormCheckBox): JSX.Element => {
-    const { control } = useFormContext()
-
     return (
       <Controller
         name={name}
-        control={control}
         render={({ field: { onChange, value } }) => (
           <div className="flex items-center space-x-4">
             <input

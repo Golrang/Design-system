@@ -1,5 +1,5 @@
 import { ComponentProps, memo } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 import { useValidation } from 'hooks/use-validation'
 import { classNames } from 'utils/classes'
 
@@ -24,13 +24,11 @@ export const TextArea = memo(
     className,
     ...rest
   }: TFormTextArea) => {
-    const { control } = useFormContext()
     const { validate } = useValidation({ required, max, min })
 
     return (
       <Controller
         name={name}
-        control={control}
         rules={{ validate }}
         render={({
           field: { onChange, value, ref },

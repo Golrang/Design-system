@@ -1,7 +1,7 @@
 import { useValidation } from 'hooks/use-validation'
 
 import { ComponentProps, memo } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 import { classNames } from 'utils'
 
 type TFormSelect = {
@@ -22,13 +22,11 @@ export const Select = memo(
     validation,
     ...rest
   }: TFormSelect) => {
-    const { control } = useFormContext()
     const { validate } = useValidation({ required, validation })
 
     return (
       <Controller
         name={name}
-        control={control}
         rules={{ validate }}
         render={({
           field: { onChange, value, ref },

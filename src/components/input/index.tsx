@@ -1,6 +1,6 @@
 import { useValidation } from 'hooks/use-validation'
 import { ComponentProps, memo } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 import { classNames } from 'utils'
 
 type TFormInput = {
@@ -33,7 +33,6 @@ export const Input = memo(
     type,
     ...rest
   }: TFormInput) => {
-    const { control } = useFormContext()
     const { validate } = useValidation({
       required,
       max,
@@ -48,7 +47,6 @@ export const Input = memo(
     return (
       <Controller
         name={name}
-        control={control}
         rules={{ validate }}
         render={({
           field: { onChange, value, ref },

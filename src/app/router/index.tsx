@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routes } from './routes'
 import { NotFound } from './not-found'
