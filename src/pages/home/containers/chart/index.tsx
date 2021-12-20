@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { useSubscribe } from './use-chart'
 
-export const Chart = () => {
+export const Chart = memo(() => {
   const { state } = useSubscribe('LIST')
 
   return (
@@ -15,4 +16,4 @@ export const Chart = () => {
       ))}
     </div>
   )
-}
+})

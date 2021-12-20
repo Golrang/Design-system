@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { useList } from './use-list'
 
-export const List = () => {
+export const List = memo(() => {
   const { data } = useList()
 
   return (
@@ -15,4 +16,4 @@ export const List = () => {
       ))}
     </div>
   )
-}
+})

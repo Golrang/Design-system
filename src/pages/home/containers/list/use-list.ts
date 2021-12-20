@@ -7,7 +7,11 @@ export const useList = () => {
       fetch('https://jsonplaceholder.typicode.com/posts').then((res) =>
         res.json()
       ),
-    { select: (data) => data.map((item: any) => item.title) }
+    {
+      select: (data) => data.map((item: any) => item.title),
+      refetchOnWindowFocus: false,
+      optimisticResults: true,
+    }
   )
 
   return {
