@@ -1,12 +1,28 @@
 {
-  "name": "platform",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@amirHosseinKhademii/design-system",
+  "version": "0.0.0",
+  "main": "dist/design.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/design.modern.js",
+  "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:amirHosseinKhademii/Design-system",
+    "directory": "frontend"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "packageManager": "yarn@3.2.1",
   "scripts": {
     "dev": "webpack serve --config webpack.config.js",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "build": "microbundle --format modern,cjs --no-compress --jsx React.createElement --define process.env.REACT_APP_VERSION=${REACT_APP_VERSION:-0.0.0-00000000.0.0}",
+    "micro-dev": "microbundle --format modern,cjs --no-compress --jsx React.createElement --define process.env.REACT_APP_VERSION=${REACT_APP_VERSION:-0.0.0-00000000.0.0} watch"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +61,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.0",
     "lint-staged": "^13.0.3",
+    "microbundle": "^0.15.0",
     "mini-css-extract-plugin": "^2.6.1",
     "nock": "^13.2.7",
     "postcss": "^8.4.14",
