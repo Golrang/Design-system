@@ -1,3 +1,9 @@
+import { Button } from "components/button";
+
 export const App = () => {
-  return <div className="bg-red-400">Test</div>
-}
+  return (
+    <div className=" max-w-md mx-auto">
+      <Button>Button</Button>
+    </div>
+  );
+};
