@@ -1,3 +1,3 @@
 export const App = () => {
-  return <>Test</>
+  return <div className="bg-red-400">Test</div>
 }
