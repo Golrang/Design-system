@@ -1,12 +1,15 @@
 {
-  "name": "amir-test-design-system",
-  "description": "A test design system",
-  "version": "0.0.6",
+  "name": "golrang-design-system",
+  "description": "React design system",
+  "version": "0.0.1",
   "main": "dist/design.js",
   "types": "dist/index.d.ts",
   "module": "dist/design.modern.js",
   "source": "src/index.ts",
-  "author": "Amir hossein khademi",
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Golrang",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -93,11 +96,5 @@
   "peerDependencies": {
     "react": ">16.8.6",
     "react-dom": ">16.8.6"
-  },
-  "peerDevelopmentDependencies": {
-    "tailwindcss": "^3.1.4",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "postcss-loader": "^7.0.0"
   }
 }
