@@ -1,10 +1,10 @@
 import { ComponentProps } from "react";
 export type TButton = ComponentProps<"button">;
 
-export const Button = ({ ...rest }: TButton) => {
+export const Button = ({ children, ...rest }: TButton) => {
   return (
-    <button className="p-2 rounded bg-blue-400" {...rest}>
-      Button
+    <button className="bg-indigo-500 p-4 rounded text-white" {...rest}>
+      {children}
     </button>
   );
 };
