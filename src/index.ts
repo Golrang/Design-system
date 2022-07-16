@@ -1,2 +1,2 @@
 import "./styles/index.css";
-export { Button, TButton } from "./components/button";
+export { Button } from "./components/button";
