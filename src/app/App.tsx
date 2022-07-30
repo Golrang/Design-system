@@ -1,8 +1,10 @@
+import { CheckBox } from "components/checkbox/CheckBox";
 import { FormG } from "components/form/Form";
 import { InputG } from "components/input/Input";
+import { SelectElement } from "components/select/Select";
 import { useWatch } from "react-hook-form";
 
-type TFormProps = { name: string; user: string; age: number };
+type TFormProps = { name: string; user: string; age: number, single: boolean, sex: string };
 
 type TInputProps = keyof TFormProps;
 
@@ -19,7 +21,9 @@ export const App = () => {
       <FormG<TFormProps> onSubmit={(state) => console.log(state.user)}>
         <App2 />
         <InputG<TInputProps> name="user" label="User" />
-        <button type="submit">Submit</button>
+        <CheckBox<TInputProps> name="single" label="متاهل"></CheckBox>
+        <SelectElement label="وضعیت نظام وظیفه" />
+        <button type="submit" className="bg-blue-600 text-white w-16">Submit</button>
       </FormG>
     </div>
   );

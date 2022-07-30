@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
 type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
-  label?: `${Capitalize<G & string>}`;
+  label?: string;
   name: G;
 };
 
