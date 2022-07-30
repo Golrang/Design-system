@@ -1,4 +1,4 @@
-import { Input, Form } from "antd";
+import { Input as AntInput, Form } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
@@ -7,7 +7,7 @@ type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
   name: G;
 };
 
-export const InputG = <G extends string>({
+export const Input = <G extends string>({
   label,
   name,
   ...rest
@@ -18,7 +18,7 @@ export const InputG = <G extends string>({
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <Input {...{ ...field }} {...rest} />
+      <AntInput {...{ ...field }} {...rest} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );

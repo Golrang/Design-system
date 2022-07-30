@@ -1,14 +1,18 @@
-import { Form } from "antd";
-import TextArea from "antd/lib/input/TextArea";
+import { Form, Input } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TTextarea<G> = Omit<ComponentProps<"textarea">, "size" | "ref" | "name"> & {
+type TTextarea<G> = Omit<
+  ComponentProps<"textarea">,
+  "size" | "ref" | "name"
+> & {
   label?: `${Capitalize<G & string>}`;
   name: G;
 };
 
-export const TextareaG = <G extends string>({
+const { TextArea: AntTextArea } = Input;
+
+export const TextArea = <G extends string>({
   label,
   name,
   ...rest
@@ -19,7 +23,7 @@ export const TextareaG = <G extends string>({
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <TextArea {...{ ...field }} {...rest} name={name} />
+      <AntTextArea {...{ ...field }} {...rest} name={name} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );

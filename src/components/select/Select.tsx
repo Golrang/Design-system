@@ -1,7 +1,7 @@
-import { Select, Form } from "antd";
+import { Select as AntSelect, Form } from "antd";
 import { useController } from "react-hook-form";
 
-const { Option } = Select;
+const { Option } = AntSelect;
 
 type TSelect = {
   label: string;
@@ -9,18 +9,18 @@ type TSelect = {
   options: { value: string; disabled?: boolean; label: string }[];
 };
 
-export const SelectElement = ({ label, name, options, ...rest }: TSelect) => {
+export const Select = ({ label, name, options, ...rest }: TSelect) => {
   const {
     field,
     fieldState: { error },
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <Select {...{ ...field }} {...rest}>
+      <AntSelect {...{ ...field }} {...rest}>
         {options?.map((option) => (
           <Option {...option}>{option.label}</Option>
         ))}
-      </Select>
+      </AntSelect>
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );
