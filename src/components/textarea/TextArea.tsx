@@ -1,24 +1,29 @@
-import { Input as AntInput, Form } from "antd";
+import { Form, Input } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
-  label?: string;
+type TTextarea<G> = Omit<
+  ComponentProps<"textarea">,
+  "size" | "ref" | "name"
+> & {
+  label?: `${Capitalize<G & string>}`;
   name: G;
 };
 
-export const Input = <G extends string>({
+const { TextArea: AntTextArea } = Input;
+
+export const TextArea = <G extends string>({
   label,
   name,
   ...rest
-}: TInput<G>) => {
+}: TTextarea<G>) => {
   const {
     field,
     fieldState: { error },
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <AntInput {...{ ...field }} {...rest} />
+      <AntTextArea {...{ ...field }} {...rest} name={name} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );

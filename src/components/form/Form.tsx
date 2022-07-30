@@ -1,5 +1,5 @@
 import { useForm, FormProvider } from "react-hook-form";
-import { Form } from "antd";
+import { Form as AntFrom } from "antd";
 import { ComponentProps } from "react";
 import { DevTool } from "@hookform/devtools";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,7 +12,7 @@ type TForm<T> = Omit<ComponentProps<"form">, "ref" | "onSubmit"> & {
 
 const Provider = FormProvider as any;
 
-export const FormG = <T extends {}>({
+export const Form = <T extends {}>({
   children,
   onSubmit,
   schema,
@@ -25,9 +25,9 @@ export const FormG = <T extends {}>({
   return (
     <>
       <Provider {...{ control }}>
-        <Form {...rest} onFinish={handleSubmit(onSubmit)}>
+        <AntFrom {...rest} onFinish={handleSubmit(onSubmit)}>
           {children}
-        </Form>
+        </AntFrom>
       </Provider>
       <DevTool control={control} />
     </>
