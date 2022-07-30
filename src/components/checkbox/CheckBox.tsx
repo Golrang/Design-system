@@ -1,29 +1,27 @@
-import { Form, Input } from "antd";
+import { Form, Checkbox as AntCheckBox } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TTextarea<G> = Omit<
-  ComponentProps<"textarea">,
-  "size" | "ref" | "name"
+type TCheckBox<G> = Omit<
+  ComponentProps<"input">,
+  "size" | "ref" | "name" | "onChange"
 > & {
-  label?: `${Capitalize<G & string>}`;
+  label: string;
   name: G;
 };
 
-const { TextArea: AntTextArea } = Input;
-
-export const TextArea = <G extends string>({
+export const CheckBox = <G extends string>({
   label,
   name,
   ...rest
-}: TTextarea<G>) => {
+}: TCheckBox<G>) => {
   const {
     field,
     fieldState: { error },
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <AntTextArea {...{ ...field }} {...rest} name={name} />
+      <AntCheckBox {...{ ...field }} {...rest} name={name} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );
