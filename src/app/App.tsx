@@ -1,9 +1,9 @@
-import { CheckBox } from "components/checkbox/CheckBox";
 import { FormG } from "components/form/Form";
 import { InputG } from "components/input/Input";
+import { SelectElement } from "components/select/Select";
 import * as yup from "yup";
 
-type TFormProps = { name: string; age: number; email: string };
+type TFormProps = { name: string; age: number; email: string; company: string };
 
 type TKeyOfForm = keyof TFormProps;
 
@@ -18,7 +18,8 @@ const schema = yup.object<TSchema<TFormProps>>({
     .required("سن لازم است")
     .positive("باید عدد مثبت باشد")
     .integer("باید عدد صحیح باشد"),
-  email: yup.string().email().required(),
+  email: yup.string().email().required("ایمیل لازم است"),
+  company: yup.string().required("نام شرکت لازم است"),
 });
 
 export const App = () => {
@@ -29,6 +30,11 @@ export const App = () => {
         <InputG<TKeyOfForm> name="name" label="Name" />
         <InputG<TKeyOfForm> name="age" label="Age" />
         <InputG<TKeyOfForm> name="email" label="Email" />
+        <SelectElement
+          name="company"
+          label="company"
+          options={[{ value: "1", label: "One" }]}
+        />
         <button type="submit">Submit</button>
       </FormG>
     </div>
