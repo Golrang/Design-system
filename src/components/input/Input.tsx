@@ -18,7 +18,7 @@ export const InputG = <G extends string>({
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <Input {...{ ...field }} {...rest} name={name} />
+      <Input {...{ ...field }} {...rest} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );
