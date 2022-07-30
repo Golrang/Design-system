@@ -1,86 +1,52 @@
-import { ButtonG } from "components/button/Button";
-import { FormG } from "components/form/Form";
-import { InputG } from "components/input/Input";
-import { RadioGroupG } from "components/radio/RadioGroup";
-import { useWatch } from "react-hook-form";
-import { SearchOutlined } from "@ant-design/icons";
+import { CheckBox } from "components/checkbox/CheckBox";
+import { Form } from "components/form/Form";
+import { Input } from "components/input/Input";
+import { Select } from "components/select/Select";
+import { TextArea } from "components/textarea/TextArea";
+import * as yup from "yup";
+
 type TFormProps = {
   name: string;
-  user: string;
   age: number;
-  other: number;
-  button: string;
-  button_1: string;
+  email: string;
+  company: string;
+  isHired: boolean;
 };
 
-type TInputProps = keyof TFormProps;
+type TKeyOfForm = keyof TFormProps;
 
-const App2 = () => {
-  const state = useWatch();
-  console.log(state);
-
-  return <InputG<TInputProps> name="name" label="Name" />;
+type TSchema<T> = {
+  [P in keyof T]: any;
 };
+
+const schema = yup.object<TSchema<TFormProps>>({
+  name: yup.string().required("نام لازم است"),
+  age: yup
+    .number()
+    .required("سن لازم است")
+    .positive("باید عدد مثبت باشد")
+    .integer("باید عدد صحیح باشد"),
+  email: yup.string().email().required("ایمیل لازم است"),
+  company: yup.string().required("نام شرکت لازم است"),
+  isHired: yup.boolean().required("وضعیت استخدام لازم است"),
+});
 
 export const App = () => {
-  const options = [
-    { value: 1, label: "somaye", disabled: true },
-    { value: 2, label: "somayetest" },
-    { value: 3, label: "somaye3" },
-    { value: 4, label: "somaye4" },
-  ];
-
-  const items = [
-    {
-      key: "1",
-      label: "1st item",
-    },
-    {
-      key: "2",
-      label: "2nd item",
-    },
-    {
-      key: "3",
-      label: "3rd item",
-    },
-  ];
-
+  const onSubmit = (state: TFormProps) => console.log(state);
   return (
     <div className=" max-w-md mx-auto p-32">
-      <FormG<TFormProps> onSubmit={(state) => console.log(state.user)}>
-        <App2 />
-        <InputG<TInputProps> name="user" label="User" />
-        <RadioGroupG<TInputProps>
-          options={options}
-          name="age"
-          optionType="button"
-          size="large"
+      <Form<TFormProps> {...{ schema, onSubmit }}>
+        <Input<TKeyOfForm> name="name" label="Name" />
+        <TextArea<TKeyOfForm> name="age" label="Age" />
+        <Input<TKeyOfForm> name="email" label="Email" />
+        <Select
+          name="company"
+          label="company"
+          options={[{ value: "1", label: "One" }]}
         />
-        <RadioGroupG<TInputProps> options={options} name="other" />
-        <ButtonG<TInputProps>
-          name="button"
-          htmlType="reset"
-          type="primary"
-          icon={<SearchOutlined />}
-          isDropDownButton={true}
-          drowpdownItems={items}
-        >
-          clickme
-        </ButtonG>
-
-
-        <ButtonG<TInputProps>
-          name="button_1"
-          htmlType="button"
-          type="primary"
-          danger
-          // loading
-        >
-          clickme
-        </ButtonG>
-
-        {/* <button type="submit">Submit</button> */}
-      </FormG>
+        <CheckBox name="isHired" label="Is Hired" />
+        <button type="submit">Submit</button>
+      </Form>
     </div>
   );
 };

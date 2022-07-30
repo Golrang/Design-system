@@ -1,24 +1,27 @@
-import { Input as AntInput, Form } from "antd";
+import { Form, Checkbox as AntCheckBox } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
-  label?: string;
+type TCheckBox<G> = Omit<
+  ComponentProps<"input">,
+  "size" | "ref" | "name" | "onChange"
+> & {
+  label: string;
   name: G;
 };
 
-export const Input = <G extends string>({
+export const CheckBox = <G extends string>({
   label,
   name,
   ...rest
-}: TInput<G>) => {
+}: TCheckBox<G>) => {
   const {
     field,
     fieldState: { error },
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <AntInput {...{ ...field }} {...rest} />
+      <AntCheckBox {...{ ...field }} {...rest} name={name} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );
