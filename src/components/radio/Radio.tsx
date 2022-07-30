@@ -1,24 +1,37 @@
-import { Radio } from "antd";
-import { ComponentProps, ReactNode } from "react";
+import { Radio as AntRadio } from "antd";
 
-type TRadio<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
-  valueitem?: [
-    {
-      value: any;
-      title?: string | ReactNode;
-      disabled?: boolean;
-    }
-  ];
+import { useController } from "react-hook-form";
+
+type TRadio<G> = {
+  name: G;
+  className?: string;
+  options: {
+    value: string;
+    label: string;
+    disabled?: boolean;
+  }[];
 };
 
-export const RadioG = <G extends string>({ valueitem, ...rest }: TRadio<G>) => {
+export const Radio = <G extends string>({
+  options,
+  name,
+  ...rest
+}: TRadio<G>) => {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ name });
+
   return (
     <>
-      {valueitem &&
-        valueitem.map((item, index) => {
-        //   <Radio value={item.value}  {...rest}>{item.title}</Radio>;
-          <Radio value={item.value} disabled={item.disabled}>{item.title}</Radio>;
-        })}
+      <AntRadio.Group {...{ name }} {...rest} {...field}>
+        {options.map((option, key) => (
+          <AntRadio {...{ key }} {...option}>
+            {option.label}
+          </AntRadio>
+        ))}
+      </AntRadio.Group>
+      {error && <p className="text-red-500">{error.message}</p>}
     </>
   );
 };

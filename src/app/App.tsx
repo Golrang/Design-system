@@ -1,8 +1,9 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
 import { Input } from "components/input/Input";
+import { Radio } from "components/radio/Radio";
 import { Select } from "components/select/Select";
-import { TextArea } from "components/textarea/TextArea";
+import { TextArea } from "components/text-area/TextArea";
 import * as yup from "yup";
 
 type TFormProps = {
@@ -11,6 +12,7 @@ type TFormProps = {
   email: string;
   company: string;
   isHired: boolean;
+  isHe: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -29,6 +31,7 @@ const schema = yup.object<TSchema<TFormProps>>({
   email: yup.string().email().required("ایمیل لازم است"),
   company: yup.string().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
+  isHe: yup.string().required("وضعیت استخدام لازم است"),
 });
 
 export const App = () => {
@@ -45,6 +48,13 @@ export const App = () => {
           options={[{ value: "1", label: "One" }]}
         />
         <CheckBox name="isHired" label="Is Hired" />
+        <Radio
+          name="isHe"
+          options={[
+            { value: "Yes", label: "Yes" },
+            { value: "No", label: "No" },
+          ]}
+        />
         <button type="submit">Submit</button>
       </Form>
     </div>
