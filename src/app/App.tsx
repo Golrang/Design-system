@@ -1,29 +1,35 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { FormG } from "components/form/Form";
 import { InputG } from "components/input/Input";
-import { SelectElement } from "components/select/Select";
-import { useWatch } from "react-hook-form";
+import * as yup from "yup";
 
-type TFormProps = { name: string; user: string; age: number, single: boolean, sex: string };
+type TFormProps = { name: string; age: number; email: string };
 
-type TInputProps = keyof TFormProps;
+type TKeyOfForm = keyof TFormProps;
 
-const App2 = () => {
-  const state = useWatch();
-  console.log(state);
-
-  return <InputG<TInputProps> name="name" label="Name" />;
+type TSchema<T> = {
+  [P in keyof T]: any;
 };
 
+const schema = yup.object<TSchema<TFormProps>>({
+  name: yup.string().required("نام لازم است"),
+  age: yup
+    .number()
+    .required("سن لازم است")
+    .positive("باید عدد مثبت باشد")
+    .integer("باید عدد صحیح باشد"),
+  email: yup.string().email().required(),
+});
+
 export const App = () => {
+  const onSubmit = (state: TFormProps) => console.log(state);
   return (
     <div className=" max-w-md mx-auto p-32">
-      <FormG<TFormProps> onSubmit={(state) => console.log(state.user)}>
-        <App2 />
-        <InputG<TInputProps> name="user" label="User" />
-        <CheckBox<TInputProps> name="single" label="متاهل"></CheckBox>
-        <SelectElement label="وضعیت نظام وظیفه" />
-        <button type="submit" className="bg-blue-600 text-white w-16">Submit</button>
+      <FormG<TFormProps> {...{ schema, onSubmit }}>
+        <InputG<TKeyOfForm> name="name" label="Name" />
+        <InputG<TKeyOfForm> name="age" label="Age" />
+        <InputG<TKeyOfForm> name="email" label="Email" />
+        <button type="submit">Submit</button>
       </FormG>
     </div>
   );
