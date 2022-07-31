@@ -1,27 +1,16 @@
-import { Select as AntSelect, Form } from "antd";
-import { useController } from "react-hook-form";
-
+import { TFormSelect } from "components/form-select/FormSelect";
+import { forwardRef } from "react";
+import { Select as AntSelect } from "antd";
 const { Option } = AntSelect;
 
-type TSelect = {
-  label: string;
-  name: string;
-  options: { value: string; disabled?: boolean; label: string }[];
-};
-
-export const Select = ({ label, name, options, ...rest }: TSelect) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({ name });
-  return (
-    <Form.Item label={label} name={name}>
-      <AntSelect {...{ ...field }} {...rest}>
-        {options?.map((option) => (
-          <Option {...option}>{option.label}</Option>
-        ))}
-      </AntSelect>
-      {error && <div className="text-red-500">{error.message}</div>}
-    </Form.Item>
-  );
-};
+export const Select = forwardRef(
+  ({ options, ...rest }: TFormSelect, ref?: any) => (
+    <AntSelect {...rest} ref={ref}>
+      {options?.map((option, key) => (
+        <Option {...option} {...{ key }}>
+          {option.label}
+        </Option>
+      ))}
+    </AntSelect>
+  )
+);

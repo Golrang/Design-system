@@ -2,7 +2,7 @@ import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
 import { Input } from "components/input/Input";
 import { Radio } from "components/radio/Radio";
-import { Select } from "components/select/Select";
+import { FormSelect } from "components/form-select/FormSelect";
 import { TextArea } from "components/text-area/TextArea";
 import * as yup from "yup";
 
@@ -29,7 +29,7 @@ const schema = yup.object<TSchema<TFormProps>>({
     .positive("باید عدد مثبت باشد")
     .integer("باید عدد صحیح باشد"),
   email: yup.string().email().required("ایمیل لازم است"),
-  company: yup.string().required("نام شرکت لازم است"),
+  company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
 });
@@ -42,7 +42,7 @@ export const App = () => {
         <Input<TKeyOfForm> name="name" label="Name" />
         <TextArea<TKeyOfForm> name="age" label="Age" />
         <Input<TKeyOfForm> name="email" label="Email" />
-        <Select
+        <FormSelect
           name="company"
           label="company"
           options={[{ value: "1", label: "One" }]}
