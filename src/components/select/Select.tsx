@@ -5,7 +5,7 @@ const { Option } = AntSelect;
 
 export const Select = forwardRef(
   ({ options, ...rest }: TFormSelect, ref?: any) => (
-    <AntSelect {...rest} ref={ref}>
+    <AntSelect {...rest} {...{ ref }}>
       {options?.map((option, key) => (
         <Option {...option} {...{ key }}>
           {option.label}
