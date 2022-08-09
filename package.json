@@ -1,7 +1,7 @@
 {
   "name": "golrang-design-system",
   "description": "React design system",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/design.js",
   "types": "dist/index.d.ts",
   "module": "dist/design.modern.js",
