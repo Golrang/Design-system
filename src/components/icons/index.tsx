@@ -8,3 +8,4 @@ export * from "./SearchIcon";
 export * from "./ListIcon";
 export * from "./ThreeDotsHorizontalIcon";
 export * from "./ThreeDotsVerticalIcon";
+export * from "./UploadIcon";
