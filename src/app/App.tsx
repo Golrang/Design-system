@@ -5,6 +5,7 @@ import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
 import { TextArea } from "components/text-area/TextArea";
 import { FormUploader } from "components/form-uploader";
+import { UploadIcon } from "components/icons";
 import * as yup from "yup";
 
 type TFormProps = {
@@ -70,7 +71,12 @@ export const App = () => {
           name="upload"
           action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
           className="border-gray-900 border-[1px] border-dashed p-2 block"
-        ></FormUploader>
+        >
+          <button>
+            <span>upload a file</span>
+            <UploadIcon className="ml-2 w-4 inline" />
+          </button>
+        </FormUploader>
         <button type="submit">Submit</button>
       </Form>
     </div>
