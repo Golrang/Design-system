@@ -1,4 +1,4 @@
-import { CheckBox } from "components/checkbox/CheckBox";
+import { FormCheckBox } from "components/form-checkbox/FormCheckBox";
 import { Form } from "components/form/Form";
 import { Input } from "components/input/Input";
 import { Radio } from "components/radio/Radio";
@@ -47,7 +47,7 @@ export const App = () => {
           label="company"
           options={[{ value: "1", label: "One" }]}
         />
-        <CheckBox name="isHired" label="Is Hired" />
+        <FormCheckBox name="isHired" label="Is Hired" />
         <Radio
           name="isHe"
           options={[

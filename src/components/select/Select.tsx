@@ -1,10 +1,9 @@
-import { TFormSelect } from "components/form-select/FormSelect";
 import { forwardRef } from "react";
-import { Select as AntSelect } from "antd";
+import { Select as AntSelect, SelectProps } from "antd";
 const { Option } = AntSelect;
 
 export const Select = forwardRef(
-  ({ options, ...rest }: TFormSelect, ref?: any) => (
+  ({ options, ...rest }: SelectProps, ref?: any) => (
     <AntSelect {...rest} {...{ ref }}>
       {options?.map((option, key) => (
         <Option {...option} {...{ key }}>

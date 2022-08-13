@@ -1,28 +1,9 @@
-import { Form, Checkbox as AntCheckBox } from "antd";
-import { ComponentProps } from "react";
-import { useController } from "react-hook-form";
+import { forwardRef, Ref } from "react";
+import { Checkbox as AntCheckBox, CheckboxProps } from "antd";
 
-type TCheckBox<G> = Omit<
-  ComponentProps<"input">,
-  "size" | "ref" | "name" | "onChange"
-> & {
-  label: string;
-  name: G;
-};
-
-export const CheckBox = <G extends string>({
-  label,
-  name,
-  ...rest
-}: TCheckBox<G>) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({ name });
-  return (
-    <Form.Item label={label} name={name}>
-      <AntCheckBox {...{ ...field }} {...rest} name={name} />
-      {error && <div className="text-red-500">{error.message}</div>}
-    </Form.Item>
-  );
-};
+export const CheckBox = forwardRef(({ ...rest }: CheckboxProps, ref: Ref<HTMLInputElement>) => {
+    return (
+        <AntCheckBox {...rest} ref={ref} />
+    );
+}
+);

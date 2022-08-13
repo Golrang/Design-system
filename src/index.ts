@@ -4,6 +4,6 @@ import "antd/dist/antd.css";
 export { Form } from "./components/form/Form";
 export { Input } from "./components/input/Input";
 export { FormSelect } from "./components/form-select/FormSelect";
-export { CheckBox } from "./components/checkbox/CheckBox";
+export { FormCheckBox } from "./components/form-checkbox/FormCheckBox";
 export { TextArea } from "./components/text-area/TextArea";
 export { Radio } from "./components/radio/Radio";
