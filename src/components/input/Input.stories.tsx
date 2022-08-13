@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Input, TInput } from "./Input";
+import { Input } from "./Input";
 
 export default {
   title: "Components/Input",
@@ -13,4 +13,3 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const Label = Template.bind({});
-Label.args = { label: "Name" };

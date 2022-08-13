@@ -1,9 +1,9 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
-import { Input } from "components/input/Input";
+import { Input } from "components/form-input/FormInput";
 import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
-import { TextArea } from "components/text-area/TextArea";
+import { TextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
 
 type TFormProps = {

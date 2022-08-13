@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { TextArea, TTextarea } from "./TextArea";
+import { FormTextArea } from "../form-textarea/FormTextArea";
 
 export default {
   title: "Components/TextArea",
-  component: TextArea,
-} as ComponentMeta<typeof TextArea>;
+  component: FormTextArea,
+} as ComponentMeta<typeof FormTextArea>;
 
-const Template: ComponentStory<typeof TextArea> = (args) => (
-  <TextArea {...args} />
+const Template: ComponentStory<typeof FormTextArea> = (args) => (
+  <FormTextArea {...args} />
 );
 
 export const Default = Template.bind({});
