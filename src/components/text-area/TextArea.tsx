@@ -2,7 +2,7 @@ import { Form, Input } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TTextarea<G> = Omit<
+export type TTextarea<G> = Omit<
   ComponentProps<"textarea">,
   "size" | "ref" | "name"
 > & {

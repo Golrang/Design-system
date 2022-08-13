@@ -2,7 +2,7 @@ import { Input as AntInput, Form } from "antd";
 import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 
-type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
+export type TInput<G> = Omit<ComponentProps<"input">, "size" | "ref" | "name"> & {
   label?: string;
   name: G;
 };
