@@ -69,7 +69,7 @@ export const App = () => {
         />
         <FormUploader
           name="upload"
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          beforeUpload={() => false}
           className="border-gray-900 border-[1px] border-dashed p-2 block"
         >
           <button>
