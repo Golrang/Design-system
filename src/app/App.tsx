@@ -4,6 +4,8 @@ import { Input } from "components/input/Input";
 import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
 import { TextArea } from "components/text-area/TextArea";
+import { FormUploader } from "components/form-uploader";
+import { ICUpload } from "icons";
 import * as yup from "yup";
 
 type TFormProps = {
@@ -13,6 +15,7 @@ type TFormProps = {
   company: string;
   isHired: boolean;
   isHe: string;
+  upload: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -32,7 +35,15 @@ const schema = yup.object<TSchema<TFormProps>>({
   company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
+  upload: yup.object().required("آپلود فایل الزامی است"),
 });
+
+const UploadButton = () => (
+  <button className="bg-cyan-400 text-white p-2 rounded">
+    <span>upload a file</span>
+    <ICUpload className="ml-2 w-4 inline" />
+  </button>
+);
 
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
@@ -55,6 +66,15 @@ export const App = () => {
             { value: "No", label: "No" },
           ]}
         />
+        <FormUploader
+          name="upload"
+          beforeUpload={() => false}
+          className="border-gray-900 border-[1px] border-dashed p-2 block"
+          onDrop={(e) => {console.log('e', e)}}
+          type="drag"
+        >
+          <UploadButton />
+        </FormUploader>
         <button type="submit">Submit</button>
       </Form>
     </div>

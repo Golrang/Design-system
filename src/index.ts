@@ -7,3 +7,6 @@ export { FormSelect } from "./components/form-select/FormSelect";
 export { CheckBox } from "./components/checkbox/CheckBox";
 export { TextArea } from "./components/text-area/TextArea";
 export { Radio } from "./components/radio/Radio";
+export { Uploader } from "./components/uploader";
+export { FormUploader } from "./components/form-uploader";
+export * from "./icons";
