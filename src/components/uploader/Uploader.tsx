@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
-import type { UploadProps } from "antd";
 import { Upload as AntUpload } from "antd";
 
+import type { TUploader } from "./uploader.types";
+
 export const Uploader = forwardRef(
-  ({ children, ...rest }: UploadProps, ref?: any) => (
+  ({ children, ...rest }: TUploader, ref?: any) => (
     <AntUpload {...rest} {...{ ref }} >
       {children}
     </AntUpload>
