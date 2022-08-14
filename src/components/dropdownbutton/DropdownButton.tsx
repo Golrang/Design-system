@@ -1,22 +1,17 @@
-import { Menu as AntMenu, Dropdown } from "antd";
-import { TFormDropdownButton } from "components/form-dropdownbutton/FormDropdownButton";
-import { forwardRef } from "react";
+import { Dropdown } from "antd";
+import { forwardRef, ReactNode } from "react";
+import { DropdownButtonProps } from "antd/lib/dropdown";
+
+export type TDropdownButton = {
+  name: string;
+  className?: string;
+  label?: ReactNode;
+} & Omit<DropdownButtonProps, "overlay">;
 
 export const DropdownButton = forwardRef(
-  ({ children, options, ...rest }: TFormDropdownButton, ref?: any) => (
-    <>
-      <Dropdown.Button
-        {...rest}
-        {...{ ref }}
-        overlay={
-          <AntMenu
-            // onClick={drowpdownOnClick}
-            items={options}
-          />
-        }
-      >
-        {children}
-      </Dropdown.Button>
-    </>
+  ({ children, label, ...rest }: TDropdownButton, ref?: any) => (
+    <Dropdown.Button {...rest} {...{ ref }} overlay={children as any}>
+      {label}
+    </Dropdown.Button>
   )
 );

@@ -15,6 +15,7 @@ type TFormProps = {
   company: string;
   isHired: boolean;
   isHe: string;
+  groupbutton: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -34,6 +35,7 @@ const schema = yup.object<TSchema<TFormProps>>({
   company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
+  groupbutton: yup.string().required("وضعیت استخدام لازم است"),
 });
 
 export const App = () => {
@@ -57,7 +59,7 @@ export const App = () => {
             { value: "No", label: "No" },
           ]}
         />
-        <FormDropdownButton
+        <FormDropdownButton<TKeyOfForm>
           name="groupbutton"
           options={[
             { key: 1, label: "submit" },
