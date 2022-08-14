@@ -1,10 +1,12 @@
 import { FormCheckBox } from "components/form-checkbox/FormCheckBox";
 import { Form } from "components/form/Form";
-import { Input } from "components/input/Input";
-import { Radio } from "components/radio/Radio";
+
 import { FormSelect } from "components/form-select/FormSelect";
-import { TextArea } from "components/text-area/TextArea";
+import { FormTextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
+import { FormInput } from "components/form-input/FormInput";
+import { FormRadio } from "components/form-radio/FormRadio";
+import { ICUpload } from "icons/UploadIcon";
 
 type TFormProps = {
   name: string;
@@ -34,17 +36,25 @@ const schema = yup.object<TSchema<TFormProps>>({
   isHe: yup.string().required("وضعیت استخدام لازم است"),
 });
 
+const UploadButton = () => (
+  <button className="bg-cyan-400 text-white p-2 rounded">
+    <span>upload a file</span>
+    <ICUpload className="ml-2 w-4 inline" />
+  </button>
+);
+
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
+
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
-        <Input<TKeyOfForm> name="name" label="Name" />
-        <TextArea<TKeyOfForm> name="age" label="Age" />
-        <Input<TKeyOfForm> name="email" label="Email" />
+        <FormInput<TKeyOfForm> name="name" label="Name" />
+        <FormTextArea<TKeyOfForm> name="age" label="Age" />
+        <FormInput<TKeyOfForm> name="email" label="Email" />
         <FormSelect<TKeyOfForm> name="company" label="company" options={[{ value: "1", label: "One" }]} />
         <FormCheckBox<TKeyOfForm> name="isHired" label="Is Hired" />
-        <Radio
+        <FormRadio
           name="isHe"
           options={[
             { value: "Yes", label: "Yes" },
