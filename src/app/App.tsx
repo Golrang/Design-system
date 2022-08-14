@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { FormRadio } from "components/form-radio/FormRadio";
 import { FormButton } from "components/form-button/FormButton";
 import { FormDropdownButton } from "components/form-dropdownbutton/FormDropdownButton";
+import { Button } from "components/button/Button";
 
 type TFormProps = {
   name: string;
@@ -69,14 +70,10 @@ export const App = () => {
           نوع عملیات
         </FormDropdownButton>
 
-        <FormButton
-          htmlType="submit"
-          type="primary"
-          shape="round"
-          name="submit"
-        >
+        <Button htmlType="submit" type="primary" shape="round">
           submit
-        </FormButton>
+        </Button>
+
         {/* <button type="submit">Submit</button> */}
       </Form>
     </div>
