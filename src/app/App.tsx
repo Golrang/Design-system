@@ -7,6 +7,7 @@ import { FormTextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
 import { FormUploader } from "components/form-uploader";
 import { ICUpload } from "icons";
+import { useMessage } from "hooks";
 
 type TFormProps = {
   name: string;
@@ -47,6 +48,7 @@ const UploadButton = () => (
 
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
+  const { success } = useMessage();
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
@@ -77,7 +79,12 @@ export const App = () => {
         >
           <UploadButton />
         </FormUploader>
-        <button type="submit">Submit</button>
+        <div className="flex flex-col spae-y -6">
+          <button type="submit">Submit</button>
+          <button type="reset" onClick={() => success("Some")}>
+            Call
+          </button>
+        </div>
       </Form>
     </div>
   );
