@@ -1,10 +1,12 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
 import { Input } from "components/input/Input";
-import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
 import { TextArea } from "components/text-area/TextArea";
 import * as yup from "yup";
+import { FormRadio } from "components/form-radio/FormRadio";
+import { FormButton } from "components/form-button/FormButton";
+import { FormDropdownButton } from "components/form-dropdownbutton/FormDropdownButton";
 
 type TFormProps = {
   name: string;
@@ -48,14 +50,32 @@ export const App = () => {
           options={[{ value: "1", label: "One" }]}
         />
         <CheckBox name="isHired" label="Is Hired" />
-        <Radio
+        <FormRadio
           name="isHe"
           options={[
             { value: "Yes", label: "Yes" },
             { value: "No", label: "No" },
           ]}
         />
-        <button type="submit">Submit</button>
+        <FormDropdownButton
+          name="groupbutton"
+          options={[
+            { key: 1, label: "submit" },
+            { key: 2, label: "cancel" },
+          ]}
+        >
+          نوع عملیات
+        </FormDropdownButton>
+
+        <FormButton
+          htmlType="submit"
+          type="primary"
+          shape="round"
+          name="submit"
+        >
+          submit
+        </FormButton>
+        {/* <button type="submit">Submit</button> */}
       </Form>
     </div>
   );
