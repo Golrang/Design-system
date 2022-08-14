@@ -1,12 +1,12 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
-import { Input } from "components/input/Input";
+import { FormInput } from "components/form-input/FormInput";
 import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
-import { TextArea } from "components/text-area/TextArea";
+import { FormTextArea } from "components/form-textarea/FormTextArea";
+import * as yup from "yup";
 import { FormUploader } from "components/form-uploader";
 import { ICUpload } from "icons";
-import * as yup from "yup";
 
 type TFormProps = {
   name: string;
@@ -50,9 +50,9 @@ export const App = () => {
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
-        <Input<TKeyOfForm> name="name" label="Name" />
-        <TextArea<TKeyOfForm> name="age" label="Age" />
-        <Input<TKeyOfForm> name="email" label="Email" />
+        <FormInput<TKeyOfForm> name="name" label="Name" />
+        <FormTextArea<TKeyOfForm> name="age" label="Age" />
+        <FormInput<TKeyOfForm> name="email" label="Email" />
         <FormSelect
           name="company"
           label="company"
@@ -70,7 +70,9 @@ export const App = () => {
           name="upload"
           beforeUpload={() => false}
           className="border-gray-900 border-[1px] border-dashed p-2 block"
-          onDrop={(e) => {console.log('e', e)}}
+          onDrop={(e) => {
+            console.log("e", e);
+          }}
           type="drag"
         >
           <UploadButton />

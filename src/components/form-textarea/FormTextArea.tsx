@@ -1,22 +1,14 @@
 import { Form, Input } from "antd";
-import { ComponentProps } from "react";
 import { useController } from "react-hook-form";
-
-type TTextarea<G> = Omit<
-  ComponentProps<"textarea">,
-  "size" | "ref" | "name"
-> & {
-  label?: `${Capitalize<G & string>}`;
-  name: G;
-};
+import { TFormTextarea } from "./form-textarea.types";
 
 const { TextArea: AntTextArea } = Input;
 
-export const TextArea = <G extends string>({
+export const FormTextArea = <G extends string>({
   label,
   name,
   ...rest
-}: TTextarea<G>) => {
+}: TFormTextarea<G>) => {
   const {
     field,
     fieldState: { error },
