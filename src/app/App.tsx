@@ -1,10 +1,12 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
-import { Input } from "components/form-input/FormInput";
+import { FormInput } from "components/form-input/FormInput";
 import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
-import { TextArea } from "components/form-textarea/FormTextArea";
+import { FormTextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
+import { FormUploader } from "components/form-uploader";
+import { ICUpload } from "icons";
 
 type TFormProps = {
   name: string;
@@ -13,6 +15,7 @@ type TFormProps = {
   company: string;
   isHired: boolean;
   isHe: string;
+  upload: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -32,16 +35,24 @@ const schema = yup.object<TSchema<TFormProps>>({
   company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
+  upload: yup.object().required("آپلود فایل الزامی است"),
 });
+
+const UploadButton = () => (
+  <button className="bg-cyan-400 text-white p-2 rounded">
+    <span>upload a file</span>
+    <ICUpload className="ml-2 w-4 inline" />
+  </button>
+);
 
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
-        <Input<TKeyOfForm> name="name" label="Name" />
-        <TextArea<TKeyOfForm> name="age" label="Age" />
-        <Input<TKeyOfForm> name="email" label="Email" />
+        <FormInput<TKeyOfForm> name="name" label="Name" />
+        <FormTextArea<TKeyOfForm> name="age" label="Age" />
+        <FormInput<TKeyOfForm> name="email" label="Email" />
         <FormSelect
           name="company"
           label="company"
@@ -55,6 +66,17 @@ export const App = () => {
             { value: "No", label: "No" },
           ]}
         />
+        <FormUploader
+          name="upload"
+          beforeUpload={() => false}
+          className="border-gray-900 border-[1px] border-dashed p-2 block"
+          onDrop={(e) => {
+            console.log("e", e);
+          }}
+          type="drag"
+        >
+          <UploadButton />
+        </FormUploader>
         <button type="submit">Submit</button>
       </Form>
     </div>
