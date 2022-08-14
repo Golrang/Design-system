@@ -1,37 +1,23 @@
 import { Radio as AntRadio } from "antd";
+import { RadioButtonProps } from "antd/lib/radio/radioButton";
+import { forwardRef } from "react";
 
-import { useController } from "react-hook-form";
 
-type TRadio<G> = {
-  name: G;
+
+export type TRadio = {
   className?: string;
-  options: {
-    value: string;
-    label: string;
-    disabled?: boolean;
-  }[];
-};
+  options: { value: string; disabled?: boolean; label: string }[];
+} & Partial<RadioButtonProps>;
 
-export const Radio = <G extends string>({
-  options,
-  name,
-  ...rest
-}: TRadio<G>) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({ name });
 
-  return (
-    <>
-      <AntRadio.Group {...{ name }} {...rest} {...field}>
-        {options.map((option, key) => (
-          <AntRadio {...{ key }} {...option}>
-            {option.label}
-          </AntRadio>
-        ))}
-      </AntRadio.Group>
-      {error && <p className="text-red-500">{error.message}</p>}
-    </>
-  );
-};
+export const Radio = forwardRef(
+  ({ options, ...rest }: TRadio, ref?: any) => (
+    <AntRadio.Group {...rest} {...{ ref }}>
+      {options.map((option, key) => (
+        <AntRadio {...{ key }} {...option}>
+          {option.label}
+        </AntRadio>
+      ))}
+    </AntRadio.Group>
+  )
+);

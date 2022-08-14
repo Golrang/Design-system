@@ -1,13 +1,12 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
-import { FormInput } from "components/form-input/FormInput";
-import { Radio } from "components/radio/Radio";
+
 import { FormSelect } from "components/form-select/FormSelect";
 import { FormTextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
-import { FormUploader } from "components/form-uploader";
-import { ICUpload } from "icons";
-import { useMessage } from "hooks";
+import { FormInput } from "components/form-input/FormInput";
+import { FormRadio } from "components/form-radio/FormRadio";
+import { ICUpload } from "icons/UploadIcon";
 
 type TFormProps = {
   name: string;
@@ -16,7 +15,6 @@ type TFormProps = {
   company: string;
   isHired: boolean;
   isHe: string;
-  upload: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -36,7 +34,6 @@ const schema = yup.object<TSchema<TFormProps>>({
   company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
-  upload: yup.object().required("آپلود فایل الزامی است"),
 });
 
 const UploadButton = () => (
@@ -48,7 +45,7 @@ const UploadButton = () => (
 
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
-  const { success } = useMessage();
+
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
@@ -61,30 +58,14 @@ export const App = () => {
           options={[{ value: "1", label: "One" }]}
         />
         <CheckBox name="isHired" label="Is Hired" />
-        <Radio
+        <FormRadio
           name="isHe"
           options={[
             { value: "Yes", label: "Yes" },
             { value: "No", label: "No" },
           ]}
         />
-        <FormUploader
-          name="upload"
-          beforeUpload={() => false}
-          className="border-gray-900 border-[1px] border-dashed p-2 block"
-          onDrop={(e) => {
-            console.log("e", e);
-          }}
-          type="drag"
-        >
-          <UploadButton />
-        </FormUploader>
-        <div className="flex flex-col spae-y -6">
-          <button type="submit">Submit</button>
-          <button type="reset" onClick={() => success("Some")}>
-            Call
-          </button>
-        </div>
+        <button type="submit">Submit</button>
       </Form>
     </div>
   );
