@@ -1,17 +1,15 @@
-import { CheckboxProps, Form } from "antd";
+import { Form } from "antd";
 import { CheckBox } from "components/checkbox/CheckBox";
 import { useController } from "react-hook-form";
+import { TFormCheckBox } from "./form-checkbox.types";
 
-type TFormCheckBox = {
-  label: string;
-  name: string;
-} & Partial<CheckboxProps>;
 
-export const FormCheckBox = ({
+
+export const FormCheckBox = <G extends string>({
   label,
   name,
   ...rest
-}: TFormCheckBox) => {
+}: TFormCheckBox<G>) => {
   const {
     field,
     fieldState: { error },
