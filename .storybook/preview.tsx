@@ -1,5 +1,5 @@
 import "../src/styles/index.css";
-
+import "antd/dist/antd.css";
 export const decorators = [(Story) => <Story />];
 
 export const parameters = {
