@@ -1,4 +1,4 @@
-import { CheckBox } from "components/checkbox/CheckBox";
+import { FormCheckBox } from "components/form-checkbox/FormCheckBox";
 import { Form } from "components/form/Form";
 
 import { FormSelect } from "components/form-select/FormSelect";
@@ -52,12 +52,8 @@ export const App = () => {
         <FormInput<TKeyOfForm> name="name" label="Name" />
         <FormTextArea<TKeyOfForm> name="age" label="Age" />
         <FormInput<TKeyOfForm> name="email" label="Email" />
-        <FormSelect
-          name="company"
-          label="company"
-          options={[{ value: "1", label: "One" }]}
-        />
-        <CheckBox name="isHired" label="Is Hired" />
+        <FormSelect<TKeyOfForm> name="company" label="company" options={[{ value: "1", label: "One" }]} />
+        <FormCheckBox<TKeyOfForm> name="isHired" label="Is Hired" />
         <FormRadio
           name="isHe"
           options={[

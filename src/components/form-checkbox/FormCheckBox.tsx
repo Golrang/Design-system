@@ -1,24 +1,25 @@
 import { Form } from "antd";
-import { Select } from "components/select/Select";
+import { CheckBox } from "components/checkbox/CheckBox";
 import { useController } from "react-hook-form";
-import { TFormSelect } from "./from-select.types";
+import { TFormCheckBox } from "./form-checkbox.types";
 
 
 
-export const FormSelect = <G extends string>
-  ({
-    label,
-    name,
-    ...rest
-  }: TFormSelect<G>) => {
+export const FormCheckBox = <G extends string>({
+  label,
+  name,
+  ...rest
+}: TFormCheckBox<G>) => {
   const {
     field,
     fieldState: { error },
   } = useController({ name });
   return (
     <Form.Item label={label} name={name}>
-      <Select {...{ ...field, ...rest }} />
+      <CheckBox {...{ ...field, ...rest }} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   );
 };
+
+
