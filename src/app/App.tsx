@@ -1,13 +1,10 @@
 import { CheckBox } from "components/checkbox/CheckBox";
 import { Form } from "components/form/Form";
 import { Input } from "components/input/Input";
+import { Radio } from "components/radio/Radio";
 import { FormSelect } from "components/form-select/FormSelect";
-import { TextArea } from "components/text-area/TextArea";
+import { FormTextArea } from "components/form-textarea/FormTextArea";
 import * as yup from "yup";
-import { FormRadio } from "components/form-radio/FormRadio";
-import { FormButton } from "components/form-button/FormButton";
-import { FormDropdownButton } from "components/form-dropdownbutton/FormDropdownButton";
-import { Button } from "components/button/Button";
 
 type TFormProps = {
   name: string;
@@ -16,7 +13,6 @@ type TFormProps = {
   company: string;
   isHired: boolean;
   isHe: string;
-  groupbutton: string;
 };
 
 type TKeyOfForm = keyof TFormProps;
@@ -36,17 +32,23 @@ const schema = yup.object<TSchema<TFormProps>>({
   company: yup.number().required("نام شرکت لازم است"),
   isHired: yup.boolean().required("وضعیت استخدام لازم است"),
   isHe: yup.string().required("وضعیت استخدام لازم است"),
-  groupbutton: yup.string().required("وضعیت استخدام لازم است"),
 });
+
+const UploadButton = () => (
+  <button className="bg-cyan-400 text-white p-2 rounded">
+    <span>upload a file</span>
+    <ICUpload className="ml-2 w-4 inline" />
+  </button>
+);
 
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
   return (
     <div className=" max-w-md mx-auto p-32">
       <Form<TFormProps> {...{ schema, onSubmit }}>
-        <Input<TKeyOfForm> name="name" label="Name" />
-        <TextArea<TKeyOfForm> name="age" label="Age" />
-        <Input<TKeyOfForm> name="email" label="Email" />
+        <FormInput<TKeyOfForm> name="name" label="Name" />
+        <FormTextArea<TKeyOfForm> name="age" label="Age" />
+        <FormInput<TKeyOfForm> name="email" label="Email" />
         <FormSelect
           name="company"
           label="company"
@@ -60,21 +62,7 @@ export const App = () => {
             { value: "No", label: "No" },
           ]}
         />
-        <FormDropdownButton<TKeyOfForm>
-          name="groupbutton"
-          options={[
-            { key: 1, label: "submit" },
-            { key: 2, label: "cancel" },
-          ]}
-        >
-          نوع عملیات
-        </FormDropdownButton>
-
-        <Button htmlType="submit" type="primary" shape="round">
-          submit
-        </Button>
-
-        {/* <button type="submit">Submit</button> */}
+        <button type="submit">Submit</button>
       </Form>
     </div>
   );
