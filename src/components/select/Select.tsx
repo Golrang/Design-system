@@ -1,15 +1,9 @@
 import { forwardRef } from "react";
-import { Select as AntSelect, SelectProps } from "antd";
-const { Option } = AntSelect;
+import { Select as AntSelect } from "antd";
+import { TSelect } from "./select.types";
 
 export const Select = forwardRef(
-  ({ options, ...rest }: SelectProps, ref?: any) => (
-    <AntSelect {...rest} {...{ ref }}>
-      {options?.map((option, key) => (
-        <Option {...option} {...{ key }}>
-          {option.label}
-        </Option>
-      ))}
-    </AntSelect>
+  ({ ...rest }: TSelect, ref?: any) => (
+    <AntSelect {...rest} {...{ ref }} />
   )
 );

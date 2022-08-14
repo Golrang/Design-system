@@ -42,11 +42,7 @@ export const App = () => {
         <Input<TKeyOfForm> name="name" label="Name" />
         <TextArea<TKeyOfForm> name="age" label="Age" />
         <Input<TKeyOfForm> name="email" label="Email" />
-        <FormSelect
-          name="company"
-          label="company"
-          options={[{ value: "1", label: "One" }]}
-        />
+        <FormSelect<TKeyOfForm> name="company" label="company" options={[{ value: "1", label: "One" }]} />
         <FormCheckBox name="isHired" label="Is Hired" />
         <Radio
           name="isHe"
