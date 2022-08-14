@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TFormDropdownButton } from "components/form-dropdownbutton/FormDropdownButton";
-import { DropdownButton } from "./DropdownButton";
+import { DropdownButton, TDropdownButton } from "./DropdownButton";
 
 export default {
   title: "Components/DropdownButton",
@@ -8,14 +7,14 @@ export default {
 } as ComponentMeta<typeof DropdownButton>;
 
 const Template: ComponentStory<typeof DropdownButton> = (
-  args: TFormDropdownButton
+  args: TDropdownButton
 ) => <DropdownButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "DropdownButton",
-  options: [
-    { key: 1, label: "Yes" },
-    { key: 2, label: "No" },
-  ],
+  label: "DropdownButton",
+  // children: [
+  //   { key: 1, label: "Yes" },
+  //   { key: 2, label: "No" },
+  // ],
 };
