@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { FormInput } from "components/form-input/FormInput";
 import { FormRadio } from "components/form-radio/FormRadio";
 import { ICUpload } from "icons/UploadIcon";
+import { Table } from "components/table";
 
 type TFormProps = {
   name: string;
@@ -36,6 +37,7 @@ const schema = yup.object<TSchema<TFormProps>>({
   isHe: yup.string().required("وضعیت استخدام لازم است"),
 });
 
+
 const UploadButton = () => (
   <button className="bg-cyan-400 text-white p-2 rounded">
     <span>upload a file</span>
@@ -43,11 +45,70 @@ const UploadButton = () => (
   </button>
 );
 
+// Table 
+export type TTable = {
+  name: string;
+  age: number;
+  email: string;
+  company: string;
+}
+
+const tableColumns = [
+  {
+    title: "نام",
+    dataIndex: "name",
+    key: "name",
+    width: "20%",
+  },
+  {
+    title: "سن",
+    dataIndex: "age",
+    key: "age",
+    width: "20%",
+  },
+  {
+    title: "ایمیل",
+    dataIndex: "email",
+    key: "email",
+    width: "20%",
+  },
+  {
+    title: "شرکت",
+    dataIndex: "company",
+    key: "company",
+    width: "20%",
+  },
+]
+
+const data = [
+  {
+    key: "1",
+    name: "John Brown",
+    age: 32,
+    email: "",
+    company: "New York No. 1 Lake Park",
+  },
+  {
+    key: "2",
+    name: "Jim Green",
+    age: 42,
+    email: "",
+    company: "London No. 1 Lake Park",
+  },
+  {
+    key: "3",
+    name: "Joe Black",
+    age: 32,
+    email: "",
+    company: "Sidney No. 1 Lake Park",
+  },
+]
+
 export const App = () => {
   const onSubmit = (state: TFormProps) => console.log(state);
 
   return (
-    <div className=" max-w-md mx-auto p-32">
+    <div >
       <Form<TFormProps> {...{ schema, onSubmit }}>
         <FormInput<TKeyOfForm> name="name" label="Name" />
         <FormTextArea<TKeyOfForm> name="age" label="Age" />
@@ -63,6 +124,9 @@ export const App = () => {
         />
         <button type="submit">Submit</button>
       </Form>
+
+      // limit table to type TTable
+      <Table direction="rtl" dataSource={data} columns={tableColumns} className="w-full text-sm text-right text-gray-500 dark:text-gray-400" />
     </div>
   );
 };
