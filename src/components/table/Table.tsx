@@ -1,12 +1,11 @@
-import { Table as AntTable } from 'antd';
-import { TTable } from './table.types'
-import { forwardRef } from 'react';
+import { Table as AntTable } from "antd";
+import { TColumn, TData, TTable } from "./table.types";
 
-
-export const Table = forwardRef(
-    ({ ...rest }: TTable, ref?: any) => (
-        <AntTable {...rest} {...{ ref }} />
-    )
-);
-
-
+export const Table = <T extends TData, G extends TColumn<T>>({
+  dataSource,
+  columns,
+  ...rest
+}: TTable<T> & {
+  dataSource: T[];
+  columns: G[];
+}) => <AntTable {...{ ...dataSource, columns }} {...rest} />;
