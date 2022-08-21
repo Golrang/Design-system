@@ -1,9 +1,6 @@
-import { ComponentProps } from "react";
+import { InputProps } from "antd";
 
-export type TFormInput<G> = Omit<
-  ComponentProps<"input">,
-  "size" | "ref" | "name"
-> & {
+export type TFormInput<G> = Omit<InputProps, "size" | "ref" | "name"> & {
   label?: string;
   name: G;
 };
