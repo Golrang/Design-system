@@ -8,4 +8,4 @@ export const Table = <T extends TData, G extends TColumn<T>>({
 }: TTable<T> & {
   dataSource: T[];
   columns: G[];
-}) => <AntTable {...{ ...dataSource, columns }} {...rest} />;
+}) => <AntTable {...{ dataSource, columns }} {...rest} />;
