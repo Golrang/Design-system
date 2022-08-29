@@ -1,12 +1,8 @@
-import { Form, Radio as AntRadio } from "antd";
+import { Form } from "antd";
 import { Radio } from "components/radio/Radio";
 
 import { useController } from "react-hook-form";
-
-export type TFormRadio = {
-  name: string;
-  options: { value: string; disabled?: boolean; label: string }[];
-};
+import { TFormRadio } from "./form-radio.types";
 
 export const FormRadio = <G extends string>({
   name,

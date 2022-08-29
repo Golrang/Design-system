@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TFormButton } from "components/form-button/FormButton";
 import { Button } from "./Button";
+import { TButton } from "./button.types";
 
 export default {
   title: "Components/Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: TFormButton) => (
+const Template: ComponentStory<typeof Button> = (args: TButton) => (
   <Button {...args} />
 );
 
