@@ -10,9 +10,11 @@ export const Form = <T extends Record<string, any>>({
   children,
   onSubmit,
   schema,
+  defaultValues,
   ...rest
 }: TForm<T>) => {
   const { control, handleSubmit } = useForm<T>({
+    defaultValues,
     ...(schema && { resolver: yupResolver(schema) }),
   })
 

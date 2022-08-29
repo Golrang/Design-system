@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import { FormInput } from 'components/form-input/FormInput'
 import { FormRadio } from 'components/form-radio/FormRadio'
 import { FormDatePicker } from 'components/form-datepicker'
+import { useWatch } from 'react-hook-form'
 
 type TFormProps = {
   name: string
@@ -38,18 +39,41 @@ const onSubmit = (state: TFormProps) => {
   console.log(state)
 }
 
+const CustomSelect = () => {
+  const state2 = useWatch({ name: 'age' })
+  console.log({ state2 })
+
+  return (
+    <FormSelect<TKeyOfForm>
+      name="company"
+      label="company"
+      options={[
+        { value: '1', label: 'One' },
+        { value: '2', label: 'Two' },
+      ]}
+    />
+  )
+}
+
+const defaultValues = {
+  name: 'string',
+  age: 10,
+  email: '',
+  company: '2',
+  isHired: true,
+  isHe: 'No',
+}
+
 export const App = () => {
+  console.log('app')
+
   return (
     <div className=" max-w-md mx-auto p-32">
-      <Form {...{ schema, onSubmit }}>
+      <Form {...{ schema, onSubmit, defaultValues }}>
         <FormInput<TKeyOfForm> name="name" label="Name" />
         <FormTextArea<TKeyOfForm> name="age" label="Age" />
         <FormInput<TKeyOfForm> name="email" label="Email" />
-        <FormSelect<TKeyOfForm>
-          name="company"
-          label="company"
-          options={[{ value: '1', label: 'One' }]}
-        />
+        <CustomSelect />
         <FormCheckBox<TKeyOfForm> name="isHired" label="Is Hired" />
         <FormRadio
           name="isHe"

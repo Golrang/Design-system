@@ -12,6 +12,7 @@ export const FormInput = <G extends string>({
     field,
     fieldState: { error },
   } = useController({ name })
+
   return (
     <Form.Item label={label} name={name}>
       <Input {...{ ...field }} {...rest} />

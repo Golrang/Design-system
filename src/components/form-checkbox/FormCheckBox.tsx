@@ -14,7 +14,7 @@ export const FormCheckBox = <G extends string>({
   } = useController({ name })
   return (
     <Form.Item label={label} name={name}>
-      <CheckBox {...{ ...field, ...rest }} />
+      <CheckBox checked={field.value} {...{ ...field, ...rest }} />
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
   )
