@@ -1,6 +1,6 @@
-import { TSelect } from "components/select/select.types";
+import { TSelect } from 'components/select/select.types'
 
 export type TFormSelect<G> = {
-    label?: string;
-    name: G;
-} & TSelect;
+  label?: string
+  name: G
+} & TSelect

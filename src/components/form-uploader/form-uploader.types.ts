@@ -1,6 +1,6 @@
-import type { UploadProps } from "antd";
+import type { UploadProps } from 'antd'
 
 export type TFormUploader = {
-  label?: string;
-  name: string;
-} & UploadProps;
+  label?: string
+  name: string
+} & UploadProps
