@@ -1,2 +1,2 @@
-export * from "./Table";
-export type { TColumn } from "./table.types";
+export * from './Table'
+export type { TColumn } from './table.types'

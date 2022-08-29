@@ -1,18 +1,18 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Uploader } from "./Uploader";
-import { ICUpload } from "../../icons";
+import { Uploader } from './Uploader'
+import { ICUpload } from '../../icons'
 
 export default {
-  title: "Component/Uploader",
+  title: 'Component/Uploader',
   component: Uploader,
-} as ComponentMeta<typeof Uploader>;
+} as ComponentMeta<typeof Uploader>
 
 const template: ComponentStory<typeof Uploader> = (args) => (
   <Uploader {...args}></Uploader>
-);
+)
 
-export const Default = template.bind({});
+export const Default = template.bind({})
 Default.args = {
   beforeUpload: () => false,
   children: (
@@ -21,7 +21,7 @@ Default.args = {
       <span className="text-sm mt-1">upload the file</span>
     </div>
   ),
-};
+}
 
-export const Dragger = template.bind({});
-Dragger.args = { ...Default.args, type: "drag" };
+export const Dragger = template.bind({})
+Dragger.args = { ...Default.args, type: 'drag' }

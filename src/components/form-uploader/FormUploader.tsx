@@ -1,8 +1,8 @@
-import { Form } from "antd";
-import { useController } from "react-hook-form";
+import { Form } from 'antd'
+import { useController } from 'react-hook-form'
 
-import type { TFormUploader } from "./form-uploader.types";
-import { Uploader } from "../uploader";
+import type { TFormUploader } from './form-uploader.types'
+import { Uploader } from '../uploader'
 
 export const FormUploader = ({
   label,
@@ -13,11 +13,11 @@ export const FormUploader = ({
   const {
     field,
     fieldState: { error },
-  } = useController({ name });
+  } = useController({ name })
   return (
     <Form.Item label={label} name={name}>
       <Uploader {...{ ...field, ...rest }}>{children}</Uploader>
       {error && <div className="text-red-500">{error.message}</div>}
     </Form.Item>
-  );
-};
+  )
+}

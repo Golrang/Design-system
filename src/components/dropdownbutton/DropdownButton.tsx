@@ -1,12 +1,11 @@
-import { Dropdown } from "antd";
-import { forwardRef, ReactNode } from "react";
-import { DropdownButtonProps } from "antd/lib/dropdown";
+import { Dropdown } from 'antd'
+import { forwardRef, ReactNode } from 'react'
+import { DropdownButtonProps } from 'antd/lib/dropdown'
 
 export type TDropdownButton = {
-  name: string;
-  className?: string;
-  label?: ReactNode;
-} & Omit<DropdownButtonProps, "overlay">;
+  name: string
+  label?: ReactNode
+} & Omit<DropdownButtonProps, 'overlay'>
 
 export const DropdownButton = forwardRef(
   ({ children, label, ...rest }: TDropdownButton, ref?: any) => (
@@ -14,4 +13,4 @@ export const DropdownButton = forwardRef(
       {label}
     </Dropdown.Button>
   )
-);
+)

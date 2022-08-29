@@ -96,7 +96,8 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "@hookform/resolvers": "^2.9.7",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "eslint-plugin-storybook": "^0.5.3"
   },
   "peerDependencies": {
     "antd": "^4.21.6",

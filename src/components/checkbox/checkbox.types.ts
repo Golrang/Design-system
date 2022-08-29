@@ -1,3 +1,3 @@
-import { CheckboxProps } from "antd";
+import { CheckboxProps } from 'antd'
 
-export type TCheckBox = Omit<CheckboxProps, 'ref'>;
+export type TCheckBox = Omit<CheckboxProps, 'ref'>

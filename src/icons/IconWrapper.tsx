@@ -1,4 +1,4 @@
-import type { TIcon } from "./icons.types";
+import type { TIcon } from './icons.types'
 
 export const ICWrapper = ({ children, ...rest }: TIcon) => {
   return (
@@ -10,5 +10,5 @@ export const ICWrapper = ({ children, ...rest }: TIcon) => {
     >
       {children}
     </svg>
-  );
-};
+  )
+}

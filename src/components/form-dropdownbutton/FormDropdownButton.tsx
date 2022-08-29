@@ -1,20 +1,17 @@
-import { Form } from "antd";
+import { Form, Menu as AntMenu } from 'antd'
 
-import { DropdownButton } from "components/dropdownbutton/DropdownButton";
+import { DropdownButton } from 'components/dropdownbutton/DropdownButton'
 
-import { useController } from "react-hook-form";
+import { useController } from 'react-hook-form'
 
 export type TFormDropdownButton<G> = {
-  name: G;
-  className?: string;
-  options: { key: number; label: string }[];
-  children?: React.ReactNode;
-};
-
-import { Menu as AntMenu } from "antd";
+  name: G
+  className?: string
+  options: { key: number; label: string }[]
+  children?: React.ReactNode
+}
 
 export const FormDropdownButton = <G extends string>({
-  className,
   name,
   options,
   children,
@@ -23,7 +20,7 @@ export const FormDropdownButton = <G extends string>({
   const {
     field,
     fieldState: { error },
-  } = useController({ name });
+  } = useController({ name })
 
   return (
     <Form.Item name={name}>
@@ -35,5 +32,5 @@ export const FormDropdownButton = <G extends string>({
       </DropdownButton>
       {error && <p className="text-red-500">{error.message}</p>}
     </Form.Item>
-  );
-};
+  )
+}

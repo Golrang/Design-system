@@ -1,2 +1,2 @@
-export type { TFormSchema } from "./form.types";
-export * from "./Form";
+export type { TFormSchema } from './form.types'
+export * from './Form'
