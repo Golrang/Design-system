@@ -1,49 +1,40 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module",
+    sourceType: 'module',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        paths: ["src"],
+        paths: ['src'],
       },
     },
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
 
   extends: [
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "plugin:storybook/recommended",
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'prettier',
+    'plugin:storybook/recommended',
   ],
   rules: {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/no-var-requires": "off",
-    "react/prop-types": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "react/display-name": "off",
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-var-requires': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/display-name': 'off',
   },
-  //   "lint-staged": {
-  //     "src/**/*.{js,jsx,tsx,ts,json}": ["eslint --fix"],
-  //     "src/**/*.{js,jsx,tsx,ts,json,css,scss,md}": ["prettier --write"],
-  //   },
-  //   husky: {
-  //     hooks: {
-  //       "pre-commit": "lint-staged",
-  //     },
-  //   },
-};
+}
