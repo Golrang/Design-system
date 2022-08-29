@@ -4,14 +4,8 @@ import { DropdownButton } from "components/dropdownbutton/DropdownButton";
 
 import { useController } from "react-hook-form";
 
-export type TFormDropdownButton<G> = {
-  name: G;
-  className?: string;
-  options: { key: number; label: string }[];
-  children?: React.ReactNode;
-};
-
 import { Menu as AntMenu } from "antd";
+import { TFormDropdownButton } from "./form-dropdownButton.types";
 
 export const FormDropdownButton = <G extends string>({
   className,

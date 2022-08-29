@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TFormRadio } from "components/form-radio/FormRadio";
 import { Radio } from "./Radio";
+import { TRadio } from "./radio.types";
 
 export default {
   title: "Components/Input",
   component: Radio,
 } as ComponentMeta<typeof Radio>;
 
-const Template: ComponentStory<typeof Radio> = (args: TFormRadio) => (
+const Template: ComponentStory<typeof Radio> = (args: TRadio) => (
   <Radio {...args} />
 );
 
