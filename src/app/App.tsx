@@ -135,12 +135,21 @@
 //     </div>
 //   );
 // };
+import { TimePicker } from "components/timePicker";
 import { Paragraph } from "components/typography/paragraph/Paragraph";
+import moment from "moment";
 
 export const App = () => {
+  const handelChange = (e: any) => {
+    console.log("e=====================>", e);
+  };
   return (
-    <div className=" max-w-md mx-auto py-32">
-      <Paragraph code={true}>Test</Paragraph>
-    </div>
+    // <div className=" max-w-md mx-auto py-32">
+    //   <Paragraph code={true}>Test</Paragraph>
+    // </div>
+    <TimePicker
+      defaultValue={moment("13:30:56", "HH:mm:ss")}
+      onChange={handelChange}
+    />
   );
 };
