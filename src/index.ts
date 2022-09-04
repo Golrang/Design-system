@@ -9,5 +9,7 @@ export { FormTextArea } from "./components/form-textarea/FormTextArea";
 export { Radio } from "./components/radio/Radio";
 export { Uploader } from "./components/uploader";
 export { FormUploader } from "./components/form-uploader";
+export { AutoComplete } from "./components/auto-complete";
+export { FormAutoComplete } from "./components/form-auto-complete";
 export * from "./icons";
 export * from "./hooks";
