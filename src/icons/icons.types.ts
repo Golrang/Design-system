@@ -1,3 +1,3 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react'
 
-export type TIcon = Omit<ComponentProps<"svg">, 'ref'>;
+export type TIcon = Omit<ComponentProps<'svg'>, 'ref'>

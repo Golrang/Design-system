@@ -1,10 +1,10 @@
-import { Button as AntButton, ButtonProps } from "antd";
+import { Button as AntButton, ButtonProps } from 'antd'
 // import { TFormButton } from "components/form-button/FormButton";
-import { forwardRef } from "react";
+import { forwardRef } from 'react'
 
 export type TButton = {
-  className?: string;
-} & Partial<ButtonProps>;
+  className?: string
+} & Partial<ButtonProps>
 
 export const Button = forwardRef(
   ({ children, ...rest }: TButton, ref?: any) => (
@@ -12,4 +12,4 @@ export const Button = forwardRef(
       {children}
     </AntButton>
   )
-);
+)
