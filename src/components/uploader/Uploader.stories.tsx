@@ -4,7 +4,7 @@ import { Uploader } from './Uploader'
 import { ICUpload } from '../../icons'
 
 export default {
-  title: 'Component/Uploader',
+  title: 'Components/Uploader',
   component: Uploader,
 } as ComponentMeta<typeof Uploader>
 
