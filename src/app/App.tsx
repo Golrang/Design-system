@@ -8,6 +8,10 @@ import { FormInput } from 'components/form-input/FormInput'
 import { FormRadio } from 'components/form-radio/FormRadio'
 import { FormDatePicker } from 'components/form-datepicker'
 import { useWatch } from 'react-hook-form'
+import { JalaliDatePicker } from 'components/jalalidatepicker'
+import { ConfigProvider } from 'antd'
+import fa_IR from "antd/lib/locale/fa_IR";
+// import "antd/dist/antd.css";
 
 type TFormProps = {
   name: string
@@ -69,7 +73,7 @@ export const App = () => {
 
   return (
     <div className=" max-w-md mx-auto p-32">
-      <Form {...{ schema, onSubmit, defaultValues }}>
+      {/* <Form {...{ schema, onSubmit, defaultValues }}>
         <FormInput<TKeyOfForm> name="name" label="Name" />
         <FormTextArea<TKeyOfForm> name="age" label="Age" />
         <FormInput<TKeyOfForm> name="email" label="Email" />
@@ -84,7 +88,11 @@ export const App = () => {
         />
         <FormDatePicker<TKeyOfForm> name="hiredDate" label="Date" />
         <button type="submit">Submit</button>
-      </Form>
+      </Form> */}
+      <ConfigProvider locale={fa_IR} direction="rtl">
+        <JalaliDatePicker format={"YYYY-MM-DD"} />
+      </ConfigProvider>
+
     </div>
   )
 }
