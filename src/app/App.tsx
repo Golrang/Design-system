@@ -13,6 +13,7 @@ import { ConfigProvider } from 'antd'
 import fa_IR from "antd/lib/locale/fa_IR";
 // import "antd/dist/antd.css";
 
+
 type TFormProps = {
   name: string
   age: number
