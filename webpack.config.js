@@ -1,13 +1,13 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/app/index.tsx"),
+  entry: path.resolve(__dirname, './src/app/index.tsx'),
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     plugins: [new TsconfigPathsPlugin()],
   },
   module: {
@@ -17,33 +17,33 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               compact: true,
               cacheDirectory: true,
               cacheCompression: false,
               presets: [
                 [
-                  "@babel/preset-env",
+                  '@babel/preset-env',
                   {
                     targets: {
-                      node: "current",
+                      node: 'current',
                     },
                   },
                 ],
                 [
-                  "@babel/preset-react",
+                  '@babel/preset-react',
                   {
-                    runtime: "automatic",
+                    runtime: 'automatic',
                   },
                 ],
-                "@babel/preset-typescript",
+                '@babel/preset-typescript',
               ],
               plugins: [
-                ["@babel/plugin-transform-runtime", { regenerator: true }],
-                "@babel/plugin-syntax-dynamic-import",
-                "@babel/plugin-proposal-class-properties",
-                "@babel/plugin-proposal-optional-chaining",
+                ['@babel/plugin-transform-runtime', { regenerator: true }],
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-proposal-optional-chaining',
               ],
             },
           },
@@ -70,40 +70,40 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
     ],
   },
   output: {
-    path: path.resolve(__dirname, "..", "../build"),
-    filename: "js/[name].[contenthash].js",
-    publicPath: "/",
-    chunkFilename: "static/js/[name].[contenthash:8].chunk.js",
+    path: path.resolve(__dirname, '..', '../build'),
+    filename: 'js/[name].[contenthash].js',
+    publicPath: '/',
+    chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./public/index.html"),
+      template: path.resolve(__dirname, './public/index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     new ReactRefreshWebpackPlugin(),
   ],
-  mode: "development",
-  devtool: "cheap-module-source-map",
+  mode: 'development',
+  devtool: 'cheap-module-source-map',
   devServer: {
-    port: "8001",
+    port: '8001',
     open: true,
     historyApiFallback: true,
   },
-  stats: "minimal",
-};
+  stats: 'minimal',
+}
